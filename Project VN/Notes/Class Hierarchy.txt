@@ -1,0 +1,17 @@
+Start() - Title screen and main menu. Tells game() to start new file, load an existing file, or delete an existing file
+
+	game() - game controller, parent to game the game states below
+
+		cut_scene() - Used to control UI in scenes with large amounts of dialouge
+		
+		town() - Used to control UI when player is in town
+
+		travel() - Used to control UI when player is between towns, dungeons, and fights
+
+		battle() - Used to control UI when player is in battle
+
+		dungeon() - Used to control UI when player is in a dungeon
+
+	text_handler()
+
+	ui_visuals()

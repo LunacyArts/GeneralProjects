@@ -1,0 +1,4 @@
+Welcome Screen & Title Animation
+	Start Game
+	Load Game
+	Quit Game

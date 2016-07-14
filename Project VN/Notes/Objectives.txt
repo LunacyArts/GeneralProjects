@@ -1,0 +1,16 @@
+Objectives
+	Visual Novel - Role Player
+		Choices are limited at first adds more options as the game progresses
+	2 - Main Characters
+		Zanick and Chesera
+			Names can be changed
+		2 - Classes
+			Player chooses Warrior or Sorcerer
+				Other Classes can be added later
+	Combat system
+		Combat abilities
+			Attack - Uses weapon in hand to attack target
+			Talent - Uses a talent learned/born/bestowed
+			Magic - Uses a spell
+			Item - Uses a consumable item in combat
+			Flee - Escape combat

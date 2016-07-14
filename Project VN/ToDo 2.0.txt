@@ -1,0 +1,5 @@
+Create manifesto
+	frames
+	image order
+
+Combine Start and game, recreate game to manage saved file

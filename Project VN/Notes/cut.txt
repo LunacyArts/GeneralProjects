@@ -1,0 +1,6 @@
+cut_scene(int stage)
+	open files from stage xx-xx
+	file will list image/text for each frame
+	three threads are run (listener, visuals, text)
+	threads closed when finished
+	listener tells visuals and text what frame #

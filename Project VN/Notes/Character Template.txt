@@ -1,0 +1,11 @@
+Name
+Class
+Level
+Rank
+HP
+
+Zanick
+Warrior
+1
+0
+20
