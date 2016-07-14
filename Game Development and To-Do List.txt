@@ -1,0 +1,77 @@
+<<Stages of Development>>
+(because it's nice to have your agenda organized ;) )
+
+--In Development--
+>>Pre-Alpha<<
+--Closed Alpha--
+--Closed Beta--
+--Open Beta--
+--Full Release--
+
+-Definitions-
+In Development- No playable version of the game exists yet.
+Pre-Alpha- A playable version of the game exists but is not ready to be playtested yet.
+Closed Alpha- People so invited may playtest early versions of the game.
+Closed Beta- People so invited may playtest later versions of the game.
+Open Beta- Game gets publicized on Twitter and Tumblr and may be playtested by anyone.
+Full Release- Final version of the game with all intended features implemented.
+
+<<To-Do List>> (last updated 6/20/2016)
+Note: List is not meant to be comprehensive. Only tasks of significance now are listed here.
+ART
+* (MAJOR) Create the title screen
+	o Design a sexy logo for Monsters VS Monster Girls!
+* (MAJOR) Adopt a visual menu style for the game and start work on frames
+* Create sprite work for the following characters: Cyclops Girl, Slime Girl, Centaur Girl, Harpy Girl, Scorpion Girl, Octopus Girl, Hydra Girl, Zombie Girl, Mushroom Girl, Luciel, Gargoyle Girl, Minotaur Girl
+* Create sprite work for at least one major monster type (i.e. generic goblin, lizardman, bugbear, etc)
+* Create concept or portrait art for the following characters: Werewolf Girl, Dragon Girl
+* Create portrait art for the following characters: Zombie Girl
+
+MUSIC
+* Begin experimenting with different styles using Midimaker or FL Studio
+
+STORY/CHARACTERS
+* Create bios for the following characters: Werewolf Girl, Minotaur Girl, Gargoyle Girl, Dragon Girl, Zombie Girl
+* Begin storyboarding for the prologue chapters
+
+GAMEPLAY
+
+PROGRAMMING
+* (MAJOR) Create the Monsters VS Monster Girls executable file and insert into the main directory (note: this step must be taken at the very end of the Pre-Alpha stage)
+* (MAJOR) Implement interface overlays and elements
+* Program an AI class
+* Implement the Attack and Move actions
+* Implement a death-checking routine
+* Make the camera center on the current action and smoothly transition to other actions
+* Expand upon or fix the turn system
+* Implement control methods
+* Implement the framework for character dialogue
+* Expand the classes implementing variables and other functions relevant in the "Gameplay Mechanics" file
+* Implement unit color that changes based on the player's color
+* Create a git repository accessible to those interested in testing the latest versions of the game and tracking specific changes
+
+MISC
+
+<<Known Issues>>
+
+* With turns activated, random squares may be highlighted red
+
+<<Road-map>>
+* The following conditions must be met in order for the game to enter the Closed Alpha stage of development:
+	o The Monsters VS Monster Girls executable file has been created and inserted into the main directory
+	o The following features have been successfully programmed:
+		[] A rudimentary first mission, complete with victory/defeat objectives, has been added
+		[] A GUI (Guided User Interface) has been added, detailing possible actions on your turn and displaying the current unit's turn
+		[] A rudimentary AI has been programmed
+		[] The rudimentary combat system has been successfully completed
+		[] A rudimentary title screen has been added
+
+Previous Roadmaps:
+* The following conditions must be met in order for the game to enter the Pre-Alpha stage of development:
+	o Completed or rudimentary sprites for Vampire Girl exist. - CHECK!
+	o The following features have been successfully programmed: - CHECK!
+		[] The combat and turn system - CHECK!
+		[] 3D polygon models (the combat grid) - CHECK!
+		[] Animated 2D sprites within the 3D field - CHECK!
+		[] Manipulable cameras - CHECK!
+		[] Entities within the 3D field - CHECK!
