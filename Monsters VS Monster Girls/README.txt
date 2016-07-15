@@ -1,0 +1,12 @@
+Hey guys, Josh here with a brief message:
+
+Everything that I put into this folder and any update that I make after I save these documents are updated in real-time, and may be viewed on the Google Drive immediately. Let me say that I do not recommend trying to read these files on the Google Drive browser (except for the .txt files and most of the image files), as the formatting for some documents may render the document weird or unviewable. Try downloading the files and getting relevant software to open these files on your computer, tablet, or other device. Here are my recommendations for opening some of the files that you may see contained within this folder:
+
+* .odt Files: Microsoft Word or OpenOffice (link: http://www.openoffice.org/download/)
+	o Personal Remarks: OpenOffice is an open-source, FREE* alternative to the Microsoft Office series of applications that I use for most work and school-related tasks, so I highly recommend using that over Microsoft Office.
+* .sai Files: PainTool SAI (legal link: https://www.systemax.jp/en/sai/)
+	o Personal Remarks: This is software that can be pirated elsewhere online, which I do not endorse or recommend. I would highly encourage you to support the creators and purchase the software yourself if you are interested in using PainTool SAI, although it is not hard to find pirated copies online.
+* .gal Files: GraphicsGale (link: https://graphicsgale.com/us/download.html)
+* .mia Files: Midi Maker (link: http://midi-maker.weebly.com/)
+* .java Files: Eclipse (link: http://www.eclipse.org/downloads/packages/eclipse-ide-java-developers/keplersr1), Notepad, or Notepad++ (link: https://notepad-plus-plus.org/)
+	o Personal Remarks: For the non-tech-savvy, .java files contain much of the core game code for a game or application in Java; these are compiled into .class files and all of these are placed into .jar files which actually contain executable code. If you know Java or feel like experimenting, any simple text editor can be used to modify or view the .java files. All of the text editors listed above are free, although Eclipse or Notepad++ should be used for users who actually want to playtest the modified game in an IDE (Integrated Development Environment).

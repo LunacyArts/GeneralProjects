@@ -1,0 +1,72 @@
+--VAMPIRE GIRL--
+(VAMPIRE GIRL is defeated)
+Vampire Girl: Make no mistake; I'll be back, and when I am, you will not stand a chance against me.
+(VAMPIRE GIRL dies)
+Vampire Girl: But...my work is not done...
+-Character Theme Messages-
+(Difficulty Select - Easy Difficulties)
+Vampire Girl: This is something I think you can handle.
+(Difficulty Select - Medium Difficulties)
+Vampire Girl: If I were in your shoes, this is how the game should be played.
+(Difficulty Select - Insane Difficulties)
+Vampire Girl: Wow...you're really looking for us to die, hmm?
+
+--CYCLOPS GIRL--
+(CYCLOPS GIRL is defeated)
+Cyclops Girl: Aww, that's too bad! I'll come back later.
+(CYCLOPS GIRL dies)
+Cyclops Girl: What? No...
+
+--SLIME GIRL--
+(SLIME GIRL is defeated)
+Slime Girl: Umm...exit stage left, I guess??
+(SLIME GIRL dies)
+Slime Girl: I can't take the pain anymore...goodbye...
+
+--CENTAUR GIRL--
+(CENTAUR GIRL is defeated)
+Centaur Girl: You've bested me, for now. Keep your guard up.
+(CENTAUR GIRL dies)
+Centaur Girl: Argh...dying a warrior's death...was always my dream...
+
+--HARPY GIRL--
+(HARPY GIRL is defeated)
+Harpy Girl: What? If my performance ends now, there won't be enough of me for the rest of you.
+(HARPY GIRL dies)
+Harpy Girl: I don't deserve this...why me?...
+
+--OCTOPUS GIRL--
+(OCTOPUS GIRL is defeated)
+Octopus Girl: Next time, try not to let me take too much damage.
+(OCTOPUS GIRL dies)
+Octopus Girl: Finally...I'm free...
+
+--SCORPION GIRL--
+(SCORPION GIRL is defeated)
+Scorpion Girl: Ouch! Looks like I'll have to retreat, for now.
+(SCORPION GIRL dies)
+Scorpion Girl: I have seen the other side...and I don't want to go there...
+
+--MUSHROOM GIRL--
+(MUSHROOM GIRL is defeated)
+Mushroom Girl: Aww, guess it's time to go back...
+(MUSHROOM GIRL dies)
+Mushroom Girl: My children...continue to spread happiness, and make this world a better place...
+
+--HYDRA GIRL--
+(HYDRA GIRL is defeated)
+Hydra Girl: Oof! Gotta go!
+(HYDRA GIRL dies)
+Hydra Girl: ...do not let Tiamat win...
+
+--ZOMBIE GIRL--
+(ZOMBIE GIRL is defeated)
+Zombie Girl: Not again...
+(ZOMBIE GIRL dies)
+Zombie Girl: Try to let me stay dead this time...
+
+--LUCIEL--
+(LUCIEL is defeated)
+Luciel: Words do not express this kind of pain. I must retreat. (Morse Cipher)
+(LUCIEL dies)
+Luciel: ...

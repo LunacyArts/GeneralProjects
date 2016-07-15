@@ -16,7 +16,7 @@ Closed Beta- People so invited may playtest later versions of the game.
 Open Beta- Game gets publicized on Twitter and Tumblr and may be playtested by anyone.
 Full Release- Final version of the game with all intended features implemented.
 
-<<To-Do List>> (last updated 6/20/2016)
+<<To-Do List>> (last updated 7/14/2016)
 Note: List is not meant to be comprehensive. Only tasks of significance now are listed here.
 ART
 * (MAJOR) Create the title screen
@@ -38,30 +38,27 @@ GAMEPLAY
 
 PROGRAMMING
 * (MAJOR) Create the Monsters VS Monster Girls executable file and insert into the main directory (note: this step must be taken at the very end of the Pre-Alpha stage)
-* (MAJOR) Implement interface overlays and elements
 * Program an AI class
 * Implement the Attack and Move actions
 * Implement a death-checking routine
-* Make the camera center on the current action and smoothly transition to other actions
-* Expand upon or fix the turn system
 * Implement control methods
 * Implement the framework for character dialogue
 * Expand the classes implementing variables and other functions relevant in the "Gameplay Mechanics" file
 * Implement unit color that changes based on the player's color
-* Create a git repository accessible to those interested in testing the latest versions of the game and tracking specific changes
 
 MISC
 
 <<Known Issues>>
 
 * With turns activated, random squares may be highlighted red
+* Text overlays may disappear randomly without warning
 
 <<Road-map>>
 * The following conditions must be met in order for the game to enter the Closed Alpha stage of development:
 	o The Monsters VS Monster Girls executable file has been created and inserted into the main directory
 	o The following features have been successfully programmed:
 		[] A rudimentary first mission, complete with victory/defeat objectives, has been added
-		[] A GUI (Guided User Interface) has been added, detailing possible actions on your turn and displaying the current unit's turn
+		[] A GUI (Guided User Interface) has been added, detailing possible actions on your turn and displaying the current unit's turn - In progress
 		[] A rudimentary AI has been programmed
 		[] The rudimentary combat system has been successfully completed
 		[] A rudimentary title screen has been added

@@ -1,0 +1,77 @@
+VAMPIRE GIRL
+
+Impaler - Deal the most damage to foes up front.
+Vampire Lord - Make the most use of vampiric abilities for maximum survivability, with enhanced magic.
+Nightstalker - Use stealth and magic to maximum effect to catch foes off-guard.
+
+CYCLOPS GIRL
+
+Cyclops Witch - Gain powerful mesmerising magical ability at the expense of defense.
+Soul Guardian - Enhance teamwork and healing-related magic at the expense of defense.
+Cyclops Brute - Gain great defense and survivability.
+
+SLIME GIRL
+
+Green Slime - Gain powerful anti-armor abilities.
+Blue Slime - Gain powerful anti-magic abilities as well as limited spellcasting ability.
+Silver Slime - Gain great defense and survivability. Much faster than other slimes and can regenerate health.
+
+CENTAUR GIRL
+
+Centaur Archer - Gain great prowess with ranged attacks and speed.
+Cherbi - Enhance teamwork ability for maximum effect.
+Baghatur - Enhance melee damage greatly and become a master in arms.
+
+HARPY GIRL
+
+Mesmeriser - Gain powerful mesmerising ability and magic.
+Darter - Gain great speed and become nearly untouchable, at the expense of offense and defense.
+Sky Mistress - Gain great magic and support abilities.
+
+HYDRA GIRL
+
+Deepspawn - Gain eldritch magic at the expense of speedy health regeneration. This also improves the hydra's elemental weaknesses.
+Sea Dragon - Gain impressive survivability in the form of improved regeneration and greater amounts of health.
+Serpentine Beast - Gain impressive speed and enhanced elemental abilities.
+
+SCORPION GIRL
+
+Priestess - Gain powerful healing magic and support abilities.
+Archmage - Gain powerful offensive and mesmerising magic.
+Cloaker - Gain enhanced stealth and combat abilities, with magic supporting these capacities. Speed is greatly increased and Scorpion Girl no longer takes penalties when fighting with multiple weapons.
+
+MUSHROOM GIRL
+
+Sporevector - Gain powerful debuffs to infect the enemy with, as well as powerful buffs to give your team.
+Assimilator - Take control of the enemy's health, magic, and mind with enhanced special abilities.
+Naturalist - Gain powerful buffs for your team and healing abilities. Comes with increased defense against magic.
+
+OCTOPUS GIRL
+
+Brawler - Gain great offensive and defensive capability.
+Assassin - Gain great stealth and speed ability.
+Spellbane - Gain antimagic and countermagic ability alongside increased offense.
+
+ZOMBIE GIRL
+
+Jiangshi - Gain increased defense against magic and lifesteal, becoming the bane of spellcasters everywhere.
+Frankenstein - Greatly increase defense and survivability.
+Voodoo Master - Gain powerful offensive magic and defense, but become weak to magic. Specializes in debuffs and curses.
+
+LUCIEL
+
+Beacon - Invoke the ancient power of the light, gaining healing ability and powerful buffs for your team.
+Lucid Anomalist - Gain eldritch magic and great stat bonuses, but become extremely vulnerable to dark-based magic.
+Colormeister - Become a well-rounded magician with a specialty in illusion and mesmerizing magic, with all-around good stats and few weaknesses.
+
+GARGOYLE GIRL
+
+Trickster - Use disguise and stealth abilities to maximum affect to catch foes off-guard.
+Kapoacinth - Gain increased magic defense and water-based abilities.
+Four-Armed Gargoyle - Eschew stealth for greatly increased physical defense and dexterity with multiple weapons.
+
+MINOTAUR GIRL
+
+Brute - Maximize physical damage output but become vulnerable to magic.
+Tank - Maximize physical and magical defense, although damage may be lacking.
+Navigator - Never be caught off guard and gain great divination abilities and bonuses in combat

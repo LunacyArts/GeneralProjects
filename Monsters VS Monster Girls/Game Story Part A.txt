@@ -1,0 +1,214 @@
+-GAME INTRODUCTION-
+
+(Prologue occurs before the title screen)
+
+Narrator: Once upon a time...
+Narrator: Humans lived and prospered on Earth.
+Narrator: They had their problems, but they were generally happy.
+Narrator: They had their flaws, but they were generally satisfied.
+Narrator: But they had their sins...and all sins, including the original sin, was destined to lead humanity to ruin...
+Narrator: Humans gave in to the evils of the various sins, such as greed and lust, becoming wicked creatures.
+Narrator: Then God descended upon the Earth, and God said:
+God: Let all ye who be wicked, be it reflected in the flesh as it is in the soul.
+Narrator: Over time, humanity refused to heed God's warnings, and so they had begun their terminal descent into wickedness.
+Narrator: One by one, the forms of all human beings eventually changed...
+Narrator: They became monstrous things, devoid of all beauty and given to malice and corruption.
+Narrator: All instincts that were right, just, and human had escaped them, and they fought each other to act upon their hatred of each other.
+Narrator: The world became shrouded in a new shadow as the Sun turned to darkness and the Moon to blood, as God begins his final plan for this corrupt and evil world...
+Narrator: But wait! Crawling out of the woodwork are the souls of those who still had a certain capacity for goodness, and for beauty.
+Narrator: But despite their mostly humanoid charm, they are still partially corrupted, partly of human form and partly of monstrous form.
+Narrator: But the survivors of this Great Transformation feel this new monstrosity in appearance does not tarnish their beauty, perhaps even enhancing it for its exotic qualities.
+Narrator: These survivors call themselves the monster girls:
+Narrator: corrupted only partially for their original sin, but they still retain their humanity, and with that, their capacity to do deeds of great good as well as the capacity to do deeds of great evil.
+Narrator: But this is the final test, the tribulation, of all that was once humanity, to survive in a wicked world of monsters and darkness.
+Narrator: The monsters envy the monster girls, for monster girls embody all the qualities that the monsters wish they had.
+Narrator: A new beacon of light standing in the darkness must emerge from the shadows of this cruel world to guide the monster girls into a new, twisted, and dark age.
+Narrator: For if it doesn't, surely, the monster girls will perish, and the Final World of Darkness will have come...
+
+-TUTORIAL MISSION 1 - Introduction to Monsters VS Monster Girls-
+
+Narrator: The Great Transformation, known to the modern world as the Great Curse, was an event that occurred over time that caused a blending of all timelines into one, where humans throughout history were transformed one by one and transferred to this timeline.
+Narrator: The result is that humans all the way from antiquity and before now belong to the same timeline as humans from the present, and even humans from the near future.
+Narrator: However, despite the transferral of all humans to one timeline, technology did not come with them.
+Narrator: Thus, what technology exists in this world is a mere artifact of a humanity that was once greater, but is now gone.
+Narrator: Our first monster girl is Vampire Girl, a former human from Medieval Europe whose family was wiped out by the Mafia.
+Narrator: Now, we see her tell her tale of anguish, despair, and vengeance.
+
+Vampire Girl: In this new world of darkness, what hope is there to regain anything resembling happiness? Love? Family?
+Vampire Girl: I remember a time where humans were comrades, lovers, even brothers.
+Vampire Girl: But that time is gone now.
+Vampire Girl: The world was replaced with a twisted mockery of itself, a world where no creature can smile any longer, for they have nothing to smile about.
+Vampire Girl: The priests at my old church always used to say that we are living in the End Times, that God was doing His work as foretold in the Book of Revelation in preparation for Judgment Day.
+Vampire Girl: But, if this is what has become of the world as a result of God's work, that He would truly abandon the world of His design,
+Vampire Girl: then God has abandoned us.
+Vampire Girl: Truly, we are alone now.
+Vampire Girl: There is no point to this wretched existence, this illusion or phantasm of "reality".
+Vampire Girl: And yet, we live. Yet, we survive. And frankly, I do not pretend to know what's after this life.
+Vampire Girl: This life may just be all we have.
+
+(Derelict Plaza, Naples, 16th Century)
+(Vampire Girl sits while peering into her soul gem, clearly depressed)
+Boss: It looks like that's the girl, and she's carrying the Soul Gem!
+Bugbear Thug 1: Hmm, she always looked so puny though and she was never pale. You sure this is her, boss?
+Boss: Yup, that's her. Are you questioning my eye for detail?
+Bugbear Thug 1: Uhh, no, boss...
+Boss: Good. That's what I want to hear.
+Lizardman Thug 1: Uhh, I'm not sure if I wanna mess with her...remember how many of us she was able to kill with just her knife! Look at that thing!
+Lizardman Thug 2: Yeah, you sure this is a good idea, boss?
+Boss: No one questions my authority or yer fingers'll get cut off! Look, you can either have it the hard way or the hard way, but either way, yer gonna get me that Soul Gem, and if not, we got a very special Iron Maiden at home and she's been very lonely...you aren't looking for her company, are you?
+All but Boss: No, boss!
+Boss: Then do as I say, yer gonna kill that girl and get me that Soul Gem! Now, wait here.
+(Boss peers around the corner to get a better look at Vampire Girl)
+Boss: Yup, she's got that knife alright, but she can't take us all on.
+(Lizardman Thug 1 follows Boss to join in the reconaissance)
+Boss: What the hell? Didn't you hear me? I said do as I say, not as I do!
+Lizardman Thug 1: UHHH, sorry boss!
+Vampire Girl: What was that? Did I just hear something?
+(Boss facepalms)
+Lizardman Thug 2: Boss, I think she just saw us! Our covers' blown!
+Boss: God, you idiots! Well, don't just stand there! GO OUT AND ATTACK!
+Vampire Girl: I knew they'd be back.
+
+(BATTLE BEGINS)
+Vampire Girl: I'm not the same weak girl whose family you'd slain a long time ago.
+Bugbear Thug 1: Look at her, a pitiful, weak girl as she always was. You never face us up front where we can kill you; you always come from behind!
+Vampire Girl: Your deeds are false and maligned as are your words. I don't suppose you'll need evidence that even trying to lay a finger on me is a mistake?
+Bugbear Thug 1: The girl has the tough talk, but not the constitution to back it up. How do you plan on fighting a monster like me? Swing around that little knife of yours thinking it'll actually hit me?
+Vampire Girl: This is the knife that has taken 104 of your lost souls. If you'd like to join them, be my guest, I won't be holding back!
+
+Monsters VS Monster Girls is a turn-based tactics game where each character on the map has a turn in which they act, whether it be moving, attacking, or using an item.
+This is also a 3D game, where each space is represented by a cubic region that contains your character.
+You are Vampire Girl, a fast character who is well-rounded in just about every aspect, although she excels at dealing damage to the enemy when she is as quiet and stealthy as possible.
+As you can tell from the name, Vampire Girl is a vampire, a monster between undead and demon that has many strengths and many weaknesses.
+But enough from me, though. Vampire Girl will take over from here, and give you pointers on how to play the game as you go. Have fun!
+Vampire Girl: But, maybe you've been in this sort of scenario before where you're controlling a character like me and having them attack enemies on their turn until all the enemies are dead, right? (YES OR NO)
+(IF YES)
+Vampire Girl: That is good to know, so I don't suppose you'll be needing much help from me. However, I require guidance in order to strike back at my foes, so I'd like to ask that you return that favor. You'll be the warrior, and I'll be the blade.
+(IF NO)
+Vampire Girl: Well then, that's alright. We're meant to help each other out, so I'll try to give pointers while fighting as best as I can.
+
+(IF the player says NO)
+Vampire Girl: I suppose we should start by moving to attack the enemy. Please select the "move" option.
+Vampire Girl: Oh, before you do that, did I mention? You can make dialog text appear instantly by pressing the X key while we're talking, or you can skip it altogether (except for important segments) by holding the Control key.
+(IF the player does not select the move option)
+Vampire Girl: Huh? That's not the move option! Well, I suppose you might know what's best though. 
+(ANY TIME THE PLAYER DOES NOT FOLLOW TUTORIAL DIRECTIONS)
+Vampire Girl: At any time, you can select the "end tutorial" option and I could stop giving you pointers, if that's what you'd like.
+(IF player selects the move option)
+Vampire Girl: Alright, good. The blue cubes represent cubes that I could move onto, while the red cubes represent cubes I can attack with any of my abilities. If I had beneficial abilities or spells, green cubes would represent where I can target using the ability. If an enemy is included in a blue or red cube, that usually means I could attack them. Move me closer to that idiot bugbear by using the arrow keys. Once you have me in a position that you like, preferably any of the cubes next to the bugbear, press the Z key again, and I will proceed with instructions.
+(IF Vampire Girl does not move next to the bugbear)
+Vampire Girl: Well, I won't really be able to attack the bugbear from here. We'd need to get me closer.
+(IF player cancels any dialog menu while instructions are being given)
+Vampire Girl: Umm, are you sure you wanted to do that? I think the best way to proceed from here is to continue the tutorial, but I'll stop nagging you about that regardless.
+(IF Vampire Girl is next to the bugbear after player confirms positioning)
+Vampire Girl: Alright, good! Now, we have several options at our disposal, and not all of them may be used for this particular scenario. I'll try to quickly explain what those options are.
+Vampire Girl: The "Attack" option brings up a dialog containing a list of basic attacks that may be used, either with manufactured weapons, natural weapons, or special abilities. Unfortunately, right now, my list of attacks isn't too great, but we still have a few options. Among the attacks I have, I can either use my Bloodied Knife for some decent damage, Devil Claws to deal some damage and reduce the enemy's resistance slightly (I'll try to explain more on that later), Blood Drain to restore some HP at the expense of the target's, and Wing Slap to deal minor damage but reduce the target's dodge slightly.
+Vampire Girl: The "Combat Actions" option brings up a dialog containing a list of combat actions that can be taken towards the enemy. Among these options that are available are "Distract", which reduces the enemy's dodge significantly until they are attacked or one turn has passed; "Aid", which increases the chances that the target's attack will hit for one round; "Trip", which attempts to trip the enemy over, forcing them to forgo their movement on their next turn; "Reposition", which attempts to change the enemy's facing using distraction; and "Ready" causes the Attacks dialog list to open so that you can select an attack that will be executed if an enemy uses a combat action, casts a spell, or moves out of any of the cubes I threaten in melee. The number of ready attacks I get per round is determined by my Dexterity, and the higher it is, the more often I'll get to be able to use it, although I'll always get at least one such attack no matter what.
+Vampire Girl: The "Fortify" option increases my defense significantly for one round.
+Vampire Girl: The "Items" option allows me to look at my list of items in order to change which weapon I'm wielding, or switch the order of the items in my inventory. I can also use items here, like this Cure I potion.
+Vampire Girl: Oh, I suppose this shouldn't be the time to boast, but did I mention? I'm no ordinary vampire, because I'm healed normally by healing spells and potions as well as inflicting spells and potions.
+Vampire Girl: Anyways, finally, the "Wait" option allows you to change my facing and then end my turn.
+Vampire Girl: Well, I guess I didn't come here for nothing. Now would be a good time to attack the bugbear in front of me.
+(IF player doesn't select attack)
+Vampire Girl: Huh? Is there something different you had in mind? I'm fine with that, as long as these enemies will end up dead eventually.
+(IF player selects attack)
+Vampire Girl: Feel free to choose any of my attacks. I think the Bloodied Knife may be most effective, but that's only because I've been using it against these thugs for years. Maybe you have your own strategy, though?
+Vampire Girl: Each attack, once highlighted in the menu, will also highlight red cubes that are possible attack targets, as well as yellow cubes that indicate your current target. Once you've selected an attack, you will choose a target by using the arrow keys to move the attack target cursor manually or go down a list of visible targets (followed by targets that don't possible targets that are seen on them), depending on which targeting mode you have. By default, the option is set to Manual Target mode, but you can change this in the "Options" menu on the pause screen.
+(TUTORIAL BREAK POINT)
+
+(IF bugbear is attacked for the first time)
+Bugbear Thug 1: Argh! What is this power! Have you been working out?
+Vampire Girl: Nope, I've simply become a monster, just like you.
+Bugbear Thug 1: Is that it? You look so puny like a human though. What are you?
+
+(TUTORIAL RESUME POINT)
+Vampire Girl: Huh, how should I respond to that...do I want to say something that will bewilder you into fear, or keep it a secret?
+Vampire Girl: Quick! Pick something for me to say! (Options: 1. "You're facing a vampire!", 2. "I'm not telling my enemies that!", 3. "...")
+(TUTORIAL BREAK POINT)
+
+(IF PLAYER SELECTS option 1)
+Vampire Girl: This is why laying a hand on me was a mistake; you're facing a vampire, kin of devils and undeads, and one of the strongest monsters in existence! What say you in defense of your stupidity-induced attempt to attack me, thinking you can kill me?
+Bugbear Thug 1: Uhhh...well, the boss made me do it!
+Boss: Alright, look; you're a pretty girl, and we've become ugly monsters. We can never return to our humanity, so why don't we play monsters like they are? Anyways, I'd never turn back from a life of gambling and money!
+Vampire Girl: That explains a lot, but unfortunately, I have no mercy for the wicked. You're about to eat lightning speed knife, followed by warm, dripping blood, going down your chest!
+
+(IF PLAYER SELECTS option 2)
+Vampire Girl: Hmm...that's a good idea! But we need to elaborate on this...maybe I can try lying to them? (Suboptions: 1. "I am the dormant Tarrasque Girl, waiting for real action to be awakened (Lie)", 2. "I am the spawn of the Devil (not necessarily true)", 3. "I'm an angel from God here to cleanse the world of sin (not necessarily true)", 4. "I'm not telling you; it's a secret!")
+(IF PLAYER SELECTS suboption 1)
+Vampire Girl: I'm afraid the mistake you've made is all too severe, for I am the one Tarrasque, the Destroyer of Worlds, foretold in ancient Sumerian mythology. This isn't even my final form, for when I awaken, the whole world will tremble beneath my feet.
+Vampire Girl: (God, I feel like an idiot...that creature doesn't even exist, but it sounded scary enough. You think they'll buy that?)
+Bugbear Thug 1: Hah! You think I'd actually believe that! We might be dumb, but we're equal parts skeptical. I never heard of such a creature, have you?
+Lizardman Thug 1: Nah, but then again, I don't read a lot about Sumerian mythology...
+Lizardman Thug 2: Sounds like a bunch of bullcrap to me.
+Boss: I have a keen ear and happen to be good at discerning the truth from lies, and I agree that your bluff is total bullcrap.
+Vampire Girl: Those fools are in denial. All the more meat to feed the beast, I suppose.
+Vampire Girl: (Well, it was worth a try...)
+(IF PLAYER SELECTS suboption 2)
+Vampire Girl: I am a demon, one of the daughters of Satan himself. I suppose all you'll need is a demonstration of my abilities, but I'm afraid you will not live long enough to see them. You picked this fight, and now you will pay the consequences.
+Bugbear Thug 1: A demon, huh? More like demon worshipper; you're so pale, I bet this is the first time you've seen any daylight in weeks; a telling sign of a witch or demon worshipper. And now, I can't believe you'd be so low to stoop down to such a level where you're willing to admit your ties to demons. That is the purest of pure evil. I'm surprised you're not like us monsters, but maybe you're something more than a monster...that makes me want to slay you more! Prepare to be purged, witch!
+Vampire Girl: Very well then, you'll be seeing your advocate in Hell well before I do.
+(IF PLAYER SELECTS suboption 3)
+Vampire Girl: I am an angel sent by God to finish the work He's started here, and you are part of the problem.
+Bugbear Thug 1: Yeah right, that costume you're wearing screams "evil" to me. Anyways, where are your angel wings?
+Vampire Girl: I do not need to answer to the damned. Prepare to meet your maker!
+(IF PLAYER SELECTS suboption 4)
+Vampire Girl: I refuse to dignify that question with a response; after all, divulging such info may reveal my weaknesses.
+Bugbear Thug 1: Well then? I suppose we'll find out!
+
+(IF PLAYER SELECTS option 3 or presses X)
+Bugbear Thug 1: Not talking, eh? Oh well, we weren't looking for answers, we're looking for blood! Prepare to get eviscerated!
+
+(TUTORIAL RESUME POINT)
+Vampire Girl: Well, I hope the response I gave was appropriate. Did I mention? This game is as much a game about making choices in the dialogue as much as it is about knowing what to do in combat. That said, it helps to have foresight on the consequences of your actions. There may have been something you missed in previous dialogue windows that might provide necessary context in order to make a good choice; you can peruse the dialogue backlog by pressing X with the dialogue open and using the arrow keys to navigate upward through the chat history, or downward to more recent messages.
+Vampire Girl: This is also a game where choice can matter, depending on the difficulty level you've selected. If it does, then choices that may have significant effects on the plot are highlighted in red. Otherwise, most choices aren't really significant except if you're trying to achieve some effect from your enemy, such as lying to them hoping they'd believe you.
+Vampire Girl: Remember how I said I require guidance on tactical matters in combat? Well, it turns out, I also require guidance on some of the things I say...no it's not that I'm absent-minded or anything. I can't really explain. Look, let's not think about these things too deeply, okay? I may be a bad decision maker, but I hope you're not.
+Vampire Girl: Anyways, now that we have attacked, the enemies will now take their turns.
+
+ENEMY PHASE - Boss's turn
+Boss: Alright, folks, attack her!
+Lizardman Thug 2: You're not gonna do anything, boss?
+Boss: I need to stay back, because if I die here, our family will die out.
+
+ENEMY PHASE - Lizardman Thug 1 and 2's turn
+Lizardman Thug 2: Alright, let's move out!
+Vampire Girl: Oh yeah, I forgot to mention. Sometimes, you share an initiative with an allied unit. If this happens, you may choose who to move first on the group's turn.
+
+ENEMY PHASE - Bugbear Thug 1's turn
+Bugbear Thug 1: It's clobberin' time!
+(ATTACK MISSES)
+Bugbear Thug 1: What!? You were right there!
+(IF PLAYER CHOSE option 1)
+Vampire Girl: As a vampire, I happen to be super speedy. You're going to have to try harder if you intend to hit me with that stick.
+Bugbear Thug 1: What?? Then stand still!
+(IF PLAYER CHOSE option 2 suboption 1)
+Vampire Girl: Dormant I may yet be, but swiftly my dreams yet move. The Tarrasque is the mightiest dodger in existence.
+Bugbear Thug 1: You're still going on about that...? (Sweat)
+(IF PLAYER CHOSE option 2 suboption 2)
+Vampire Girl: So, you might be right; if I'm a demon worshipper, surely, I made some sort of pact with the Devil, right? There you have it, you guessed correctly; I have sold my soul to the Devil in return for devil spawn abilities, such as super speed.
+Bugbear Thug 1: I knew there was some sort of cheap sorcery at work here! However, you will face my club eventually, I just have to strike when you're down!
+(IF PLAYER CHOSE option 2 suboption 3)
+Vampire Girl: God has made His messengers invincible; you cannot possibly hope to lay a finger on me!
+Bugbear Thug 1: Hey, shut up and fight me!
+(ELSE)
+Vampire Girl: You will just have to try harder than that to hit me.
+Bugbear Thug 1: Then stand still so I could whack you!
+
+PLAYER PHASE - Vampire Girl's turn
+Vampire Girl: Finally, it's once again my turn. By the way, in the event you decide you do not want to watch those who are not controlled by you take their turns, you can always press the Enter key to skip it until it's your turn again.
+Vampire Girl: So, now that it's my turn again, I could explain a little bit more about other options you have on your turn.
+Vampire Girl: If you weren't already aware of this, you can press the Enter key to open the pause menu, where you can do a number of things such as set Options, save your battle progress in a checkpoint and quit, or quit without saving.
+Vampire Girl: You can also press the S key in order to enter Freelook mode, allowing you to look at any unit on the map and their stats. To exit Freelook mode, press X.
+Vampire Girl: You can change the camera's orientation as well along fixed positions; pressing the W or Q keys makes the camera rotate to the right and left, respectively.
+Vampire Girl: Now that we've gotten the miscellaneous things out of the way, I'd like to elaborate a little further on some options that you can take at the beginning of your turn.
+Vampire Girl: Alongside some things you can do after moving, you also have access to the "Sneak" option, which allows you to move up to half your speed and remain hidden if the conditions are right for that.
+Vampire Girl: I'm a decent fighter, but admittedly, I do it best from behind. That said, getting me into a position where I can strike my enemies from behind significantly increases the amount of damage I can deal to the enemy, in what is called "Backstab Damage". All units can take advantage of that, but for sneaky types like me, it's more powerful.
+Vampire Girl: Anyways, I think I've explained just about everything I needed to, or at least everything that's essential to playing this game. The tutorial is not over, but I will continue to give you guidance as we go about the prologue levels. In the event that you decide you're not needing my help anymore, you can always choose the "End Tutorial" option on my turn or toggle the Tutorial in the Pause menu. An entire tutorial/manual that can be read at your own pace is also provided in the Pause menu. Now, let's continue to make our enemies feel the pain!
+
+(IF Vampire Girl is hurt and hasn't used Cure I potion)
+Vampire Girl: Argh! These enemies are tougher than I thought. I think it's time we use that Cure I potion...
+(TUTORIAL BREAK POINT)
+
+(IF Vampire Girl is defeated)
+Boss: Bwahaha! You're weak after all!
+Vampire Girl: Damn...well, I'm no ordinary foe. Like the phoenix, every time you strike me down, I just rise back up. We'll just have to try harder next time. If you're having trouble, enable the Tutorial in the Pause menu.
+(DREAM BREAK; Mission reset)

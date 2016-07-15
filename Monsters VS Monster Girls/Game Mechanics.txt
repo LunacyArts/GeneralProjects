@@ -1,0 +1,240 @@
+~GAME MECHANICS OF MONSTERS VS MONSTER GIRLS~
+
+-Difficulty Levels-
+
+The selectable difficulty levels in the game are meant to modify the difficulty of the game overall. However, difficulty in Monsters VS Monster Girls is more or less deconstructed from its usual manifestation in other games; the difficulty level one chooses has a huge effect on one's overall game experience. In many ways, your game experience starts with the selection of a difficulty level instead of within the actual game. There are three difficulty "categories", and each category has several difficulty levels. The difficulty categories are documented as follows:
+
+1. Easy Difficulties
+The easy difficulties are characterized by their low difficulty level as well as the ability to retry missions. Characters controlled by the player are "defeated" instead of killed, and withdraw from the battlefield to return for the next mission. These difficulty levels are meant to be less emotionally challenging than the higher difficulty levels due to this fact, although the stakes are low for accomplishment. Beating an easy difficulty will lead to any of the easy endings.
+Difficulty levels include:
+I. Sweet Dream - It's gonna be a piece of cake! (For newcomers to turn-based tactics games.)
+II. Day Dream - You've got a lot to dream about, so dream on! (For those weak of heart but strong of mind.)
+
+2. Normal Difficulties
+The normal difficulties are characterized by the average skill level required to beat them. The lowest normal level is possible even for new players to beat if they pick up quickly enough on the game or are experienced with strategy or tactics. In the normal difficulties, character death is real and permanent, and failing missions could lead to a branching point in the plot. It is at the normal difficulties that the game is meant to be played, and the players could realistically achieve the golden endings, with some work.
+Difficulty levels include:
+III. Lucid Dream - It's all clear now, it's you versus the world! (For those who want a decent challenge.)
+IV. Deep Dream - We're in deep waters now, so keep your head high! (For those whom everything must be at stake for enjoyment.)
+
+3. Insane Difficulties
+The insane difficulties are characterized by their very high barrier to entry for most players. Beating even the lowest of the insane difficulties is a challenge, while it's probable that the highest difficulty level is downright impossible. However, the insane difficulties give the most realistic portrayal of a dark and hateful world which is difficult to survive in, so even if one manages to succeed in the face of great opposition, it is likely that one will still lose a lot of their loved ones in the process, so even the best victory in the end feels bittersweet at best.
+Difficulty levels include:
+V. Illusory Dream - The world is not as it seems, but can you shatter this illusion? (For those who want to cry a little.)
+VI. Phantasmal Dream - It's all too real, but this can't possibly be happening! (For those who have a lot of tissues handy.)
+VII. Nightmare - The soul will break under the weight of its sins. (For those into S&M. Or those whose stoic minds are made of reinforced steel. Ask your doctor before use if you have dry eye syndrome, difficulty sleeping at night, depression, apathy, lunacy, rapid pulse or lack thereof.)
+
+In addition, it is possible for the player to use a custom difficulty instead. The following attributes are measured or toggled for a custom difficulty level:
+
+* Battle Difficulty: 1-9
+	o The difficulty of the battles. The higher the number, the more difficult the battles are.
+* Choices Matter: True/False
+	o If choices matter is toggled off, choices made by the player don't matter much. It will be impossible for the plot to branch based on a player's choice, as the characters will insist on a default choice.
+* Character Death: True/False
+	o If character death is toggled true, a character that dies is dead for good and cannot be brought back. If character death is toggled false, a character that falls to 0 HP is "defeated" and cannot be used for the rest of the battle, although they will return with full HP for the next battle.
+* Restart Failed Missions: True/False
+	o If this option is toggled true, any mission that has become failed will be restarted. Otherwise, failed missions cannot be restarted, and if possible, the plot will branch (otherwise, any of the possible game over endings will be granted to the player).
+* Toggle Easy Ending: True/False
+	o If easy endings are enabled, then the player will be granted the easy ending upon beating the game. We at Monsters VS Monster Girls staff highly encourage that players go experiment a little outside their comfort zones in order to get a more satisfying game experience.
+* Limit Enemy Reinforcements: True/False
+	o For missions where there are enemy reinforcements, setting this option to true will prevent waves of enemy reinforcements from spawning indefinitely. It will also limit the number of reinforcements in general to amounts that can be handled easily. For survival missions, this will instead reduce the time limit to survive the waves of reinforcements until victory.
+
+-Creatures-
+
+All creatures on the game field have attributes associated with them. On the game field, creatures are also associated with an allegiance (also known as team number), elevation, status effects, and facing, each of which have their own important effects. Monsters, monster girls, demons, angels, and beasts are all considered creatures, so they all have these stats in common.
+
+* Level: A creature's level basically determines how powerful it is. It is tied to a lot of attributes, and each time a level is increased some stats attached to it may be increased as well. The levels of creatures not controlled by the player generally don't increase, although difficulty often effects the levels of creatures.
+* HP (Health Points): HP is the vital stat common to all creatures. Once HP reaches 0, the creature either dies or is considered "defeated" depending on game difficulty and circumstances. Maximum HP is tied to level, and maximum HP growth rates is tied to Fitness.
+* MP (Magic Points, Mana): MP, also known as Mana, is a stat used by some creatures in order to utilize or initiate magic-based attacks and cast spells. Not all creatures have MP scores. Maximum MP is tied to to level, and maximum HP growth rates is tied to Magic Ability (MAG).
+* DP (Divine Power): DP is a stat that only certain creatures, including all of the characters of the player party, can use. DP is used to perform extraordinary feats or make use of certain monstrous abilities. For creatures that have divine items, DP is also used as the main source of power for the abilities of divine items. Maximum Divine Power grows at a fixed rate for all creatures (except angels and demons, which have higher growth rates for maximum divine power) and maximum divine power is tied to level.
+* Strength (STR): Strength is the stat that determines a character's physical attack power as well as the maximum weight that they can carry. It also determines how effective the character is when wielding weapons or items of a certain weight.
+* Dexterity (DEX): Dexterity is the stat that determines how likely a character is to hit with any of their abilities or spells. That said, it is important for those who rely on physical combat as well as magic. It also determines how likely a creature is to dodge certain attacks, as well as their Initiative score.
+* Fitness (FIT): Fitness is the stat that determines a character's maximum HP growth rate and resistance.
+* Magic Ability (MAG): Magic ability is the stat that determines a character's maximum MP growth rate, magic resistance, and magical attack power. Magic ability is utilized from different sources, such as knowledge of the field of magic and intelligence in solving magical problems, although it may also be derived from a user's inherent magical or psionic ability. Most creatures have a Magic Ability score of 0. The presence or absence of MP as a stat for a creature is not always dependent on how high its Magic Ability is, although most creatures with high MAG also have a considerable reserve of MP.
+* Physical Attack Power: Physical attack power is tied to a user's Strength score, and determines how much damage any physical attack by the creature deals.
+* Magical Attack Power: Magical attack power is tied to a user's Magical Ability score, and determines how much damage any magical attack by the creature deals. Not all magical attacks deal damage, however, so the Magical Attack Power attribute may instead be tied to a magical attack's magnitude.
+* Accuracy: Accuracy is tied to a creature's Dexterity score, and determines how likely attacks are to hit against the creature. It is opposed by a creature's dodge score when determining whether an attack hits or not.
+* Dodge: Dodge is tied to a creature's Dexterity score, and determines how likely attacks are to miss against the creature.
+* Armor: Armor is an attribute that is attached to what armor a character is wearing, if any. Natural Armor may also be increased by a creature's level, if the creature is of the type that relies on natural armor that gets better over time. Armor reduces the damage of physical attacks.
+* Resistance: Resistance is tied to a creature's Fitness score, and reduces the damage that certain physical effects may have on a creature. It also reduces the likelihood that certain physical effects may affect the creature (its physical "saving throw").
+* Magic Resistance: Magic resistance is tied to a creature's Magic Ability score, and reduces the damage that certain magical effects and attacks may have on a creature. It also reduces the likelihood that certain magical effects may affect the creature (its magical "saving throw").
+* Movement Speed: Movement speeds are usually fixed for a character's class although in some cases it may be increased by level or items. There are four categories of movement speed, and almost all creatures generally have a land movement speed, but none of the other three categories. They are:
+	o Land: Determines how many squares a character may move on land, defined as the top surface.
+	o Swim: Determines how many squares a character may move in the water.
+	o Fly: Determines how many squares a character may move in air. A character with a fly movement speed can ignore land movement speed penalties at any point in the movement.
+	o Burrow: Determines how many squares a character may move in dirt or other suitable material.
+* Initiative: Initiative is a stat that determines when a creature's turn takes place. In addition, initiative has the effect of granting a user more turns in a round than one if the initiative score is at least 2 increments higher than the average initiative score of all battle participants (for every 2 increments higher than the average initiative score is exceeded, one extra round is granted, although this is constrained by the creature's DEX score). The maximum number of bonus turns that may be granted in this case is attached to the creature's Dexterity score, and the number of bonus turns in a round generally doesn't exceed 4, which is extraordinary for most creatures to begin with. Initiative is tied to a creature's Dexterity score. 
+* Number of Attacks: The number of attacks per turn is tied to a creature's class, level, and Dexterity score. Generally speaking, a creature may have at least one attack for every upper limb (i.e. arm or tentacle) it possesses. A creature with certain classes, a high level, and a high Dexterity score relative to their opponent may be granted bonus attacks. For all purposes, spells, physical abilities, divine abilities, and magical abilities are all considered attacks as well, although a creature may generally only use those abilities or spells once a turn.
+
+-Creature Types and Subtypes-
+
+Every creature in the game has a type and sometimes a subtype as well. For gameplay purposes, type usually determines strengths and weaknesses a creature may have, and all creatures sharing a subtype may have certain traits in common with each other.
+
+* Human: No humans are known to exist to my knowledge in the world of Monsters VS Monster Girls, but if they did, they would have this type.
+* Monster: Monsters are former humans that have been corrupted by the Great Curse into mostly hateful beings. 
+* Monster Girl/Guy: Monster girls are former humans that have been partially corrupted by the Great Curse, but retain most of their human consciousness and appearence.
+* Demon: Demons are creatures made by God as part of his original plan to steward Hell, although this does not mean that demons hold an allegiance to God. Demons have little role in the game story compared to monsters and monster girls, but they do appear at times. Demons are generally evil creatures, although exceptions may exist. It is impossible for demons to reconcile with God without God's will. All demons bear the following traits in common:
+	o Inherent Divinity: All demons have magical power and divine power, regardless of if they're useful or not. In addition, this trait doubles the maximum MP and DP growth rates.
+	o Vulnerability to Holy: All demons, regardless of their alignment, are susceptible to holy-based attacks, magic, items, and fields. They take increased damage from these sources, and the magnitude of negative status or magical effects are greater on them when derived from holy creatures or fields.
+* Angel: Angels are creatures made by God and act as his servants in most areas, carrying out His will. However, they are not omnibenevolent, omnipotent, and omniscient as God is, so they are inherently imperfect beings. Angels that no longer carry out God's will are known as Fallen Angels ("Fallen" is a subtype, in this case, that is restricted to angels). All angels bear the following traits in common:
+	o Inherent Divinity: All angels have magical power and divine power, regardless of if they're useful or not. In addition, this trait doubles the maximum MP and DP growth rates.
+	o Holy: All angels are immune to holy-based attacks, magic, items, and fields. In addition, this trait automatically imparts the Holy quality to their own attacks, magic, and fields. Angels with the "Fallen" subtype lose the Holy trait, however.
+* Spirit: Spirits are all creatures that do not fit the category of Angel or Demon, and includes ghosts. These creatures are generally rare in the setting of Monsters VS Monster Girls, due to the game's basis on the Abrahamic religions, although recently departed souls are commonly classified as spirits before they are judged. All spirits bear the following traits in common:
+	o Inherent Divinity: All spirits have magical power and divine power, regardless of if they're useful or not. In addition, this trait doubles the maximum MP and DP growth rates.
+* Beast: Beasts are all creatures that do not have sufficient intelligence to be classified as true monsters, and may be very similar to animals in terms of behavior. Beasts do not have souls, so it is impossible for beasts to have divine power. While most beasts are ordinary animals, some greater beasts were created by the Great Curse. Beasts, by nature, cannot be considered to be good or evil, although a beast that transcends this boundary through magic, machinery, or the divine may no longer be considered a beast and should be re-classified as another type.
+* Automaton: Automatons (i.e. robots and golems) are creatures that are made by other creatures or natural forces and generally do not have minds or wills of their own. Most are made out of metals or other hard materials and are programmed to follow certain instructions. Automatons use the item attributes of Power and Hardness instead of Strength and Fitness (respectively) for the purposes of determining stats that use those scores. Most automatons also have a fixed natural armor based on their hardness.
+
+-Character Paths-
+
+A character's path is the course they take over the duration of the game in order to specialize in one particular field. All characters (i.e. the monster girls of the party) follow a default character path, but this may be changed at will. Character paths may be the difference in between if a character is predominantly a damage dealer in role or a tank, for example. Character path may interact with class in different ways, but path is easier to change. For characters, character path is a more significant determinator for their abilities than class is, since class is often fixed for each monster and monster girl.
+
+-Physical Abilities-
+
+Physical abilities are abilities that any creature of a given class may make use of without expending MP or DP.
+
+-Magic-
+
+Magic encompasses two seperate but related game mechanical concepts in-game: spells and magic abilities. Both require MP to use and check against a target's magic resistance, but the similarities generally end there. Magic abilities may generate effects similar to spells, but they do not always require knowledge or mastery in order to use unlike spells, and are often inherent to the creature's class. Spells, on the other hand, are the pool of any magical effect that can be invoked, usually by citing arcane words or making arcane gestures. Spells are usually learned or are unique to a creature's class, although sometimes they can be invoked from a spellbook, scroll, or other magic item. Spells that rely on somatic components can be recited more quickly by characters with more arms free, reducing the time it takes to cast them. For creatures without arms, a different mechanic is usually utilized to replace their lack of arms for somatic components, although it's usually divine or psionic in nature.
+
+-Divine Abilities-
+
+Divine abilities are abilities that only certain creatures, including all of the monster girls of the party, can use. Divine abilities are directly attached to the strength of the user's soul (i.e. their level), and divine abilities are unique to each creature. Divine power is the main stat required to use divine abilities, and divine abilities can make extraordinary, divine things occur that generic monsters are generally not capable of doing.
+
+-Status Effects-
+
+Physical status effects are any of the default status effects that may result from a physical source. Magical status effects include more special status effects that are either magical or divine in nature (i.e. from a magic ability, spell, or divine ability). Physical status effects are generally assumed to have a magnitude of "1", but magical status effects may have any magnitude, so they may be more potent. The most common physical status effects are listed below:
+* Fatigued: The creature is exhausted, and the creature takes a penalty to their physical attack power and dodge. Spells take longer to recite.
+* Exhausted: The creature is especially exhausted, and the creature takes a penalty to their physical attack power, dodge, movement speed, and initiative. Spells take much longer to recite, and may become impossible to recite at higher magnitudes.
+* Dazzled: The creature's eyes are overstimulated, making it harder to see. If vision is the creature's main method of sensing the environment, then the creature takes penalties to its accuracy and dodge for attacks and abilities using vision.
+* Blinded: The creature's eyes are incapable of granting the creature vision. If vision is the creature's main method of sensing the environment, then the creature cannot detect anything using vision (everything is hidden to it).
+* Minor Deafness: The creature's ears are overstimulated, making it harder to hear. Sound-based effects become harder to hear for a limited time.
+* Total Deafness: The creature's ears are incapable of granting the creature the sense of sound. The creature has a chance of failing spells with verbal components or playing song-based attacks incorrectly. In addition, the creature cannot be affected by sound-based attacks that specifically target the ears (such as song-based attacks).
+* Dazed: The creature has been knocked out of its senses, moving and acting slower as a result. The creature takes penalties to its movement speed, accuracy, and dodge.
+* Stunned: The creature has been knocked out of its senses, losing its actions for a number of turns equal to the magnitude of the stun. It may not move or act, but it may still dodge attacks at a penalty to its dodge.
+* Rooted: The creature is unable to move from its cube for one reason or another.
+* Minor Paralysis: The creature's muscles or main method of movement becomes harder to manipulate as they seemingly become more stiff, reducing the movement speed and reaction time of the creature. This will reduce its physical attack power, dodge, and initiative as well.
+* Total Paralysis: The creature's muscles or main method of movement locks it in place. It is unable to move, act, or react, and it's treated as though its dodge and initiative scores were 0.
+* Confused: The creature has become unable to differentiate between friend or foe. There is a random chance control of the creature is lost and they take some other action instead on the creature's turn.
+* Berserk: The creature has gone into a rage and will always attack the nearest target to it, friend or foe. It will always use physical attacks or abilities if possible.
+* Poisoned: The creature is afflicted by a poison that inflicts damage over time. Each poison may have unique effects however, but poison status effects are all removed by the same abilities that target poisons. That said, every poison is special and is documented as a seperate status effect.
+* Diseased: The creature is afflicted by some disease. Each disease is special and is documented as a seperate status effect, but all are removed by abilities that target disease.
+* Necrotic: The creature is suffering from the advanced stages of necrosis in parts of its body, causing it to take damage over time.
+* Bleeding: The creature is actively bleeding out, and if this is not stopped, it will die. The creature takes damage over time as this happens.
+* On Fire: The creature has caught fire and is taking fire damage over time.
+* Frozen: The creature is encased in ice that makes it completely unable to move, act, or perceive the environment around them. Frozen renders the creature unconscious as well. The creature is treated as though its dodge and initiative scores were 0. Fire attacks and warmth may cause the removal of this condition, although the creature will take a certain amount of damage as its body recovers from the freezing.
+* Drowning: The creature lacks air as water or some other liquid is forced into its lungs, causing it to take damage over time.
+* Suffocating: The creature lacks air, causing it to take damage over time from suffocation.
+* Unconscious: The creature is unable to perceive the environment around them and react to stimuli as though it were conscious. The creature is completely unable to move or act, and is treated as though its dodge and initiative scores were 0.
+
+
+-The Game Field-
+
+This category encompasses all game mechanics related to the game field. The game field is composed of 3D cubes of different elevations, and almost every battle has at least two layers of elevation (most have 3). The following game mechanics are important to the game field:
+* Coordinates: Determines location of the cube, as well as which creature is within the cube, if applicable. The height coordinate of a cube is also known as "elevation", and its own special effects are documented below.
+	o Elevation: This is the "height" coordinate of a cube. Attacks, including physical attacks and missiles, coming from higher elevation deal more damage and are more likely to hit due to the force of gravity acting upon it. On the other hand, the higher the elevation, the greater the effects of wind are for a creature.
+* Weather: This is the weather throughout the battle space. Weathers include rain, sandstorm, snow, and fog (only in multiplayer and DLC missions). Weather seperately also accounts for wind and current:
+	o Wind/Current: There is always a wind speed present for all spaces filled with fluid (air, water, or a liquid), although the wind and current speeds may differ locally. Wind has a direction and strength in km/h. For creatures that are using their fly or swim movement speeds, wind or current matters greatly in determining how far they can move. Wind also has an effect on the strength and accuracy of individual missile attacks, and winds with high enough speeds may even restrict ground movement speeds or even toss around creatures if it's sufficiently high.
+* Space Type: Each space type has default movement speeds/penalties associated with it. A space type is simply what terrain fills the majority of a cube. Space types and subtypes are documented below:
+	o Ground: Forms the boundary between solid and air spaces. Ground cubes are effected by wind. The air component of ground cubes inherit the properties of the air cubes adjacent to them.
+		[] Ice: Ice reduces the friction of the ground surface it's present on, making it harder to move. A risk to all creatures that are not used to moving on ice is slipping and falling, sometimes sliding some cubes in some direction related to their intended direction of movement.
+		[] Slick: See "Ice" above.
+	o Solid: May be composed of any solid that would require a burrow speed to traverse, such as dirt. Solid is not effected by wind. Any void created from burrowing inherits the properties of the air adjacent to it.
+		[] Dirt: Dirt is the default solid material for most locales, and is soft enough that most burrow speeds are sufficient. Any creature with a burrow speed is assumed to use that burrow speed to dig through dirt with ease.
+		[] Rock Solid: Hard metals, stone, bricks, bedrock, permafrost, and other hard materials that do not have the consistency of dirt generally cannot be burrowed through.
+	o Air: May be composed of any atmosphere, although it is assumed that this air is breathable. Fly speeds are required to traverse cubes filled with air.
+		[] Air: Air is a default atmosphere present for most Earth-like environments and locales. It is composed of approximately 70 percent nitrogen and 20 percent oxygen.
+		[] Mine Gas: Carbon dioxide or other poisonous, non-flammable gases are a hazard in certain underground locales. Creatures that are not immune to the effects of mine gas may become fatigued in battle in spaces composed of Mine Gas.
+		[] Flammable Mine Gas: Hydrogen or other poisonous, flammable gases are extremely hazardous to the cubes they occupy. Not only are creatures that are not immune to the effects of mine gas vulnerable to fatigue just as ordinary mine gas, but flammable mine gas carries the risk of being ignited by any significant source of heat. Any spell or effect that creates fire will ignite the gas, causing significant fire damage to all creatures occupying the cube in a great explosion. After this explosion, flammable mine gas becomes ordinary mine gas.
+	o Water: May be composed of any liquid with a similar density to water, although the liquid need not be water (the space type is listed as water-like if it is not water, indicating a normal swim speed may be used to traverse it). Swim speeds are used to traverse water.
+	o Lava: May be composed of any molten rock or metal with a similar density to lava. Water swim speeds are not sufficient to traverse this type of liquid due to its density, so a lava swim speed is necessary. Water swim speeds are 1/4th as fast in lava as they are in water and may be used in the absence of a lava swim speed (the default number of squares that can be moved in lava for creatures with a water swim speed is always 1, though). Lava also has the effect of burning creatures that occupy squares if they are not prepared to deal with it, as well as igniting flammable materials and creatures in the area.
+	o Mercury: May be composed of any fluid with a similar density to mercury. Water swim speeds are not sufficient to traverse this type of liquid due to its density, so a mercury swim speed is necessary. Water swim speeds are 1/4th as fast in mercury as they are in water and may be used in the absence of a mercury swim speed (the default number of squares that can be moved in mercury for creatures with a water swim speed is always 1, though).
+		[] Mercury: A metallic element that exists as a liquid at room temperature. Very dense and poisonous to creatures that are not immune to mercury.
+		[] Bromine: A halogen that exists as a liquid at room temperature. It's dense enough to warrant a Mercury swim speed, although a water swim speed is only reduced to 1/2 of its effectiveness when used to swim in Bromine. Very poisonous to creatures that are not immune to bromine.
+
+-Vision and Sneaking-
+
+Being a very tactics-heavy game, vision is a very big deal in Monsters VS Monster Girls. For this reason, character facing in the encounters does matter for the purposes of determining the range of vision that a character has.
+
+Most characters have a field of vision that is effectively a 3D cone projected from the character's forward facing out to 60 degrees in each direction. If a target entity is not within the entity's field of view for whatever reason, the target may use the Sneak action in order to hide and remain invisible on the map. However, as long as the target can be viewed by anyone, it will remain visible on the map until it can't be seen by anyone.
+
+A target may be outside of a unit's field of view if it is behind cover, concealed by terrain (such as foliage or past higher elevations), outside of the vision range of the unit, or using special abilities that allow it to sneak anywhere (such as Invisibility). Note that even if a target is outside of the vision range of the unit (i.e. behind the unit), it will still be visible on the map and won't get any bonuses to attack until it sneaks.
+
+Also note that it is only on DLC maps, multiplayer (where the fog option can be toggled), and the Hard difficulties where fog can occur. Under conditions of fog, a unit uses their fog vision range as part of their vision range. If a target is outside of their fog vision range but not sneaking, it will still be visible on the map, but it cannot be identified; it appears as a question mark on the map.
+
+Sneak is one of many actions that all units can partake at the start of their turn. Sneaking is only effective (i.e. you will only be considered "hidden") when a unit can be outside of all units' fields of vision, although certain abilities may make sneaking easier. The Sneak action is a version of the Move action where, if successful, the unit may move up to half their speed (or stand still) and remain hidden until either revealed or, on their next turn, they take a non-sneak action at the start of their turn. Some units can move at their full speed while Sneaking.
+
+The Sneak action is tied mostly to class, although the Dexterity and size attributes augment it. Every time a unit sneaks under conditions where it can be hidden, all target units that might see it check against it using "Perception", which is itself an attribute determined by a unit's level and class, although in many cases the strength of every unit's Perception may be unique. There is a random roll performed for the Sneak VS Perception check, using each unit's bonuses to those attributes. A minimum roll on Sneak guarantees that it fails regardless of the opposing Perception roll, while a maximum roll on Sneak guarantees that it will succeed regardless of the opposing Perception roll; these scenarios are generally rare however.
+
+A related attribute is "hidden". Hidden is relative to each unit, although if a unit is hidden to all units of a player, that player will not see the hidden unit on the map. If striking from a position from which a unit is hidden, the unit gains bonuses to the amount of damage they deal, and certain classes gain additional bonuses; this is called a "sneak attack".
+
+If at any point during a unit's movement, a unit's movement path includes a hidden target, the unit will be stopped and the hidden target will be revealed (if it's using a sneak-augmented ability such as Invisibility or the unit is blind, it will appear as a question mark on the map and remain unidentified).
+
+Non-allied units that are not hidden but appear as question marks on the map will remain that way until it can be seen, in which case, it is considered "identified". The moment it is considered hidden, the next time it is no longer hidden, it must be identified again. Unidentified units have stats that cannot be viewed to the player with which it is unidentified to.
+
+-Items-
+
+All items have levels, and items have the following attributes in common:
+
+* Level: This attribute is set in stone for generic items. Level is tied to an item's stats and the maximum number of upgrades it can have.
+* Durability: An item becomes worn with use. After enough uses, it will eventually become less useful until repaired. Hardness effects an item's maximum durability score. This attribute isn't present for divine items.
+* Hardness: Determines how hard an item is. Hardness is tied to the material an item is made out of, so it cannot be modified. The higher the hardness of an item, the longer it will take to break (the higher its maximum durability score is). Higher quality items have higher hardness scores for their base materials.
+* Weight: The combined weight scores of all items held by a character may cause the character to become overencumbered, which affects their movement speed, dexterity, dodge chances, and their effectiveness using weapons. If a character is not strong enough to wield certain items or weapons, the weapon may be less effective and miss more easily. However, the stronger the character is, the higher maximum weight score they may have before they are overencumbered. Also, the stronger a character is relative to the weight of the weapon they're carrying, the less likely they are to miss with the weapon.
+* Quality: An item's quality helps determine its starting durability and hardness. Quality for an individual item cannot be increased or decreased, and it directly determines the level of most generic items. More experienced smiths make higher quality items.
+* Power: Power determines how much damage a weapon deals, and is attached to the weapon's level. For magical items, it determines the magnitude of the magical effect the item has.
+* Dexterity: Power determines how easily wielded a weapon is, and is attached to a weapon's level. The higher the dexterity of a weapon or item, the more likely that it will successfully affect its targets (i.e. the more likely it will hit).
+* Speed: Speed determines how quickly a user that meets the item's weight requirements is capable of using it, and is attached to a weapon's level, size, and weight. The higher the speed of the weapon, the faster it may be used. This is generally interpreted as "how many attacks a user of the item can squeeze in" before they cannot continue attacking for their turn.
+* Size: Size is a fixed attribute for generic items, and determines who can wield the weapon. Users wielding weapons not designed for their size may be less effective than users wielding weapons designed for their size. Generally speaking, weapons of larger sizes are more powerful than weapons of smaller sizes. A weapon's size per unit volume is usually attached to its weight, so a weapon made of the same material will generally be heavier for larger sizes.
+
+-Divine Items-
+
+The divine items are the great, magical creations of the angels and their fallen kin, the fallen angels. Most known divine items in the world are created by fallen angels who were either bored or malicious. All of the main protagonists have a divine item unique to them, but there are also some other divine items that may be acquired in the course of regular play or divine items in story.
+
+In terms of game statistics, divine items set themselves apart from regular items in that they have experience and gain experience just as creatures do. Divine items also have levels, and the most powerful divine items have high levels. All items have pre-set levels, but only divine items are able to raise them. This property of divine items can be attributed to the fact that, when creating a divine item, a fraction of the angel's soul is poured into the divine item, giving it a sense of "awareness" about the world around them, although not necessarily giving them intelligence. Divine items gain experience through use.
+
+Each divine item also has a set of attributes attached to it, just like creatures and weapons do, although they may not necessarily be the same as either. Some attributes are considered its natural strengths, while others are considered its natural weaknesses. Natural strengths are more likely to increase with levels such as what may happen with other creatures, while natural weaknesses are less likely to increase with levels. Attributes unique to divine items are listed below:
+
+* Purity: If used for purposes other than what it's meant for, the active purity level of an item will go down. Likewise, if used for the purposes it's intended for, the purity level will go up, but more slowly than it tends to go down. High purity makes a weapon more likely to hit, but low purity will make a weapon stronger. Adding to the purity attribute increases its maximum capacity in both the positive and negative directions.
+* Consciousness: This attribute is how "aware" a weapon is of its environment. Consciousness contributes to a weapon's chances to hit more significantly than its Dexterity attribute does.
+* Divinity: This attribute is attached to how powerful the divine soul that created the item is. Divinity contributes to a weapon's damage output more significantly than its Power does.
+
+-Monster Infighting-
+
+Driven by a hatred for each other that is about the same as the hatred for the monster girls, if the circumstances are right, monsters will fight each other to the death. In fact, this mechanic may become extremely useful in later fights where high level enemies may be very dangerous for the player characters to take on alone.
+
+For the purposes of this section, both monsters and demons are considered monsters. Other entities don't have a significant level of hatred towards others and so do not have a hatred attribute.
+
+Every monster and demon NPC has a hidden Hatred attribute towards all other entities in the game field, as well as default values for it. Once the Hatred attribute towards any entity reaches a certain threshold, the monster will not be afraid to attack that entity, and may even prefer it to other targets. Less intelligent monsters, especially infantry, will be more inclined to attack targets they hate more, even if it's not a monster girl.
+
+Once the following Hatred thresholds are reached, there will be certain effects:
+* Hatred 25: If the monster has beneficial area-of-effect abilities, the monster will not care if the allied target is included in the area-of-effect or not.
+* Hatred 50: If the monster has single-target healing spells or other beneficial abilities, they will be far less likely to prioritize using it over this target and may withhold healing altogether.
+* Hatred 75: If the monster has hostile area-of-effect abilities, the monster will not care if the target is included in the area-of-effect or not.
+* Hatred 100: The monster will deliberately attack their target if it seems like a viable option.
+* Hatred 1000: The monster will deliberately attack their target until it is dead. It will attack its target at any cost except for its life.
+
+It should be noted that subordinate monsters have higher thresholds for attacking their commanders; it's increased by +300 for Hatred 100. In the game's artificial intelligence decision making, a higher hatred towards a target doesn't necessarily mean it will attack it over other targets, although if its hatred level is sufficiently high enough it may. The monster will prefer to attack targets that pose more of a threat to it until its hatred towards any given targets is high enough to be a bigger determinator in its decision making.
+
+If a commanding monster has a higher hatred towards certain monsters than they do the monster girls, they will preferentially use their forces to attack those monsters if possible. Insubordination on the part of any of the commander's units will be more likely depending on their own hatred levels, although it is also dependent on the commander's Leadership attribute.
+
+Here is a list of default Hatred values for monsters towards other entities, although they may vary on individual circumstances:
+* Towards Monsters of the same kind: Hatred 10
+* Towards Monsters of a different kind: Hatred 20
+* Towards Monsters of a different, but allied faction: +5 modifier
+* Towards Monsters of a neutral faction: +55 modifier
+* Towards Monsters of a hostile faction: +90 modifier
+* Towards Monster Girls: Hatred 110
+
+Here is a list of actions that can be taken to increase or decrease Hatred values:
+* Monster is attacked directly: +100+damage taken
+* Monster takes damage from a non-AOE effect that misses its target: +50+damage taken
+* Monster takes damage from an area-of-effect attack: +damage taken
+* Monster of same kind or faction witnesses any of the above actions happening towards a monster of the same kind: +(insert action above/10) rounded down
+
+-Multiplayer-
+
+While the main focus of the game is on the single-player story, there will also be competitive and cooperative options for multiplayer.
+
+For competitive play, a number of players spar in order to accomplish some sort of objective, with their soldiers composed into teams. A player team is composed of no more than five characters, and a team has a name, motto, color, flag, prepared messages and mascot associated with it. Names, mottos, prepared messages, and flags may not be inappropriate or offensive. For as long as I continue to support the game, as long as the multiplayer mode is not neglected, I will continue to release patches in relation to competitive balance.
+
+For cooperative play, the players bring their cast of monster girls with them in order to accomplish special cooperative missions. These missions are more difficult than usual, so good tactics with your partner is necessary to overcome them. For all monster girls that each player holds in common with the other player, each player may only have control of a limited number of them (for example, one player controls only Vampire Girl, Cyclops Girl, and Centaur Girl, while the other controls Slime Girl and Harpy Girl), using the girl's statistics from their selected save file. Team attributes, if possible, will be pulled from the competitive multiplayer mode (such as team color).
+
+A mascot is a minor monster, such as a goblin, of little consequence to the heroines in the main story. They usually join the main party in the story but serve no other function or purpose other than being bullied by the main party. A mascot may be outfitted as the player sees fit, although they see no action in combat and are solely there to serve as the team's "face" in multiplayer.
