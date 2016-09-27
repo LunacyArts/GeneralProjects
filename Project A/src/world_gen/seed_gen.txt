@@ -1,0 +1,9 @@
+Seed Generator
+-----------------------------------------------------------
+Generates a 2D array of ints 0-X
+     X being the number of differnt tile types
+-----------------------------------------------------------
+Tiles types
+-----------------------------------------------------------
+0 - plains, open land
+1 - 

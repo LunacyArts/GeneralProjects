@@ -1,0 +1,23 @@
+-----Project VN - Indev 0.0.1------
+
+-----Indev 0.0.1 - To Do-----
+
+-----Over all To Do list-----
+
+[]  Bring on team members
+	[X]  Music
+	[]  Art
+	[]  Programmer
+
+[]  Title Screen
+	[]  Lunacy Arts Production Img
+	[]  Project VN Title IMG
+	[]  New Game, Load Game, Delete Game Buttons
+		[]  Saved game file manager
+	[]  Title Screen music
+	[]  
+
+[]  Thread manager for audio, visual, and user input
+	[]  Audio Thread
+	[]  Visual Thread
+	[]  User Input Thread
