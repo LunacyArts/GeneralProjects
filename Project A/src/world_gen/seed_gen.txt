@@ -5,5 +5,9 @@ Generates a 2D array of ints 0-X
 -----------------------------------------------------------
 Tiles types
 -----------------------------------------------------------
-0 - plains, open land
-1 - 
+0 - plains
+1 - forest
+2 - mountian
+3 - River
+4 - Lake
+5 - Pond
