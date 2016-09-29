@@ -16,12 +16,12 @@ Closed Beta- People so invited may playtest later versions of the game.
 Open Beta- Game gets publicized on Twitter and Tumblr and may be playtested by anyone.
 Full Release- Final version of the game with all intended features implemented.
 
-<<To-Do List>> (last updated 7/14/2016)
+<<To-Do List>> (last updated 7/26/2016)
 Note: List is not meant to be comprehensive. Only tasks of significance now are listed here.
 ART
 * (MAJOR) Create the title screen
 	o Design a sexy logo for Monsters VS Monster Girls!
-* (MAJOR) Adopt a visual menu style for the game and start work on frames
+* Adopt a visual menu style for the game and start work on frames
 * Create sprite work for the following characters: Cyclops Girl, Slime Girl, Centaur Girl, Harpy Girl, Scorpion Girl, Octopus Girl, Hydra Girl, Zombie Girl, Mushroom Girl, Luciel, Gargoyle Girl, Minotaur Girl
 * Create sprite work for at least one major monster type (i.e. generic goblin, lizardman, bugbear, etc)
 * Create concept or portrait art for the following characters: Werewolf Girl, Dragon Girl
@@ -38,29 +38,29 @@ GAMEPLAY
 
 PROGRAMMING
 * (MAJOR) Create the Monsters VS Monster Girls executable file and insert into the main directory (note: this step must be taken at the very end of the Pre-Alpha stage)
-* Program an AI class
-* Implement the Attack and Move actions
-* Implement a death-checking routine
-* Implement control methods
+* (MAJOR) Program an AI class (current task)
 * Implement the framework for character dialogue
-* Expand the classes implementing variables and other functions relevant in the "Gameplay Mechanics" file
+* Expand the classes implementing variables and other functions relevant in the "Gameplay Mechanics" file (Current Task)
 * Implement unit color that changes based on the player's color
 
 MISC
 
 <<Known Issues>>
 
-* With turns activated, random squares may be highlighted red
-* Text overlays may disappear randomly without warning
+* With turns activated, random squares may be highlighted red, cyan, yellow, or blue--major graphical issue
+* You can select an infinite number of squares when moving
+* It may not be possible to target certain spaces for an attack
+* The text selection box may behave unusually
+* The game may crash if all units belong to AI players
 
 <<Road-map>>
 * The following conditions must be met in order for the game to enter the Closed Alpha stage of development:
 	o The Monsters VS Monster Girls executable file has been created and inserted into the main directory
 	o The following features have been successfully programmed:
 		[] A rudimentary first mission, complete with victory/defeat objectives, has been added
-		[] A GUI (Guided User Interface) has been added, detailing possible actions on your turn and displaying the current unit's turn - In progress
-		[] A rudimentary AI has been programmed
-		[] The rudimentary combat system has been successfully completed
+		[] A GUI (Guided User Interface) has been added, detailing possible actions on your turn and displaying the current unit's turn - CHECK!
+		[] A rudimentary AI has been programmed - In progress
+		[] The rudimentary combat system has been successfully completed - CHECK!
 		[] A rudimentary title screen has been added
 
 Previous Roadmaps:

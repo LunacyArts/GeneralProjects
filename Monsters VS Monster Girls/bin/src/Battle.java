@@ -45,6 +45,7 @@ public class Battle {
 		if (this.initiativeTurnCount>=initiativeList.size()){
 			this.initiativeTurnCount=0;
 		}
+		this.getCurrentUnitTurn().setMovementPointsLeft(this.getCurrentUnitTurn().movementPoints);
 	}
 	Entity getCurrentUnitTurn(){
 		return this.initiativeList.get(this.initiativeTurnCount);

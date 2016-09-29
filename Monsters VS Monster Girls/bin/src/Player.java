@@ -12,6 +12,11 @@ public class Player {
 	//The playerController variable identifies what type of player controls the player.
 	//0 is a local human player, 1 is an AI player, 2 is a remote human player,
 	//3 is a replay player, and 4 is a neutral player (special case scenario).
+	public static final int HUMAN = 0;
+	public static final int AI = 1;
+	public static final int REMOTE = 2;
+	public static final int REPLAY = 3;
+	public static final int NEUTRAL = 4;
 	int playerController;
 	Color3f playerColor;
 	ArrayList<Entity> controlledUnits = new ArrayList<Entity>();

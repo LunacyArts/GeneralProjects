@@ -18,6 +18,13 @@ import javax.swing.Timer;
 import com.sun.j3d.utils.image.*;
 import java.io.*;
 import javafx.scene.*;
+/*Note that the name of this class is kind of misleading; the Renderer is an
+ * Applet component that contains the Canvas3D, which in turn contains the
+ * 3D virtual universe in which everything is rendered. The Renderer object
+ * actually contains the objects within it that renders an image to the screen.
+ * The Renderer uses the KeyListener and ActionListener classes for game inputs.
+ * A better name for this class, in retrospect, should have been "gameWindow",
+ * as this is all the Renderer really functions as.*/
 public class Renderer extends Applet implements KeyListener, ActionListener  {
 	private static final long serialVersionUID = -5353540872979294434L;
 	private Timer timer;
@@ -34,6 +41,8 @@ public class Renderer extends Applet implements KeyListener, ActionListener  {
 	TransformGroup menuTG7 = new TransformGroup();
 	TransformGroup menuTG8 = new TransformGroup();
 	TransformGroup menuTG9 = new TransformGroup();
+	TransformGroup menuTG10 = new TransformGroup();
+	TransformGroup menuTG11 = new TransformGroup();
 	Transform3D menu3D1 = new Transform3D();
 	Transform3D menu3D2 = new Transform3D();
 	Transform3D menu3D3 = new Transform3D();
@@ -43,9 +52,12 @@ public class Renderer extends Applet implements KeyListener, ActionListener  {
 	Transform3D menu3D7 = new Transform3D();
 	Transform3D menu3D8 = new Transform3D();
 	Transform3D menu3D9 = new Transform3D();
+	Transform3D menu3D10 = new Transform3D();
+	Transform3D menu3D11 = new Transform3D();
 	Color3f menuWhite = new Color3f(1f,1f,1f);
 	Text2D move;
 	Text2D attack;
+	Text2D ability;
 	Text2D spell;
 	Text2D endTurn;
 	Text2D nameLabel;
@@ -53,9 +65,27 @@ public class Renderer extends Applet implements KeyListener, ActionListener  {
 	Text2D levelLabel;
 	Text2D healthLabel;
 	Text2D magicLabel;
+	Text2D ability1;
+	Text2D ability2;
+	Text2D ability3;
+	Text2D ability4;
+	Text2D ability5;
+	Text2D ability6;
 	TransformGroup bottomLabelTG = new TransformGroup();
 	Transform3D bottomLabelT3D = new Transform3D();
 	Text2D bottomLabel = new Text2D("You are now in freelook mode. Press the arrow keys to navigate, 5 to escape.",menuWhite,"Arial",10,1);
+	OrientedShape3D selectionBoxOS3;
+	float selectionBoxXAnchor = 0.125f;
+	float selectionBoxYAnchor = 0.08f;
+	float selectionBoxZAnchor = -1.04f;
+	Point3f selectionBoxRotationP = new Point3f(selectionBoxXAnchor,selectionBoxYAnchor,selectionBoxZAnchor);
+	Raster selectionBoxRaster;
+	OrientedShape3D portraitOS3;
+	Point3f portraitPoint = new Point3f(-0.40f,0.10f,-1.04f);
+	Raster portraitRaster;
+	ImageComponent2D portraitImg;
+	boolean changeText1=false;
+	boolean changeText2=false;
 	//private float xValue;
 	Transform3D lookAt = null;
 	TransformGroup viewGroup = null;
@@ -65,6 +95,13 @@ public class Renderer extends Applet implements KeyListener, ActionListener  {
 	ArrayList<Box> activeBoxObjects = new ArrayList<Box>();
 	ArrayList<Sphere> activeSphereObjects = new ArrayList<Sphere>();
 	ArrayList<Vector3d> activeTransformVectors = new ArrayList<Vector3d>();
+	ArrayList<gameCube> highlightedSpaces = null;
+	ArrayList<gameCube> highlightedYellow = null;
+	double maxRange=0;
+	double minRange=0;
+	ArrayList<Spell> currentSpellList;
+	ArrayList<Ability> currentAbilityList;
+	gameCube chosenSpace = null;
 	Canvas3D currentCanvas3D = null;
 	Label currentLabel = new Label();
 	Point3d Point1 = new Point3d(0,0,0);
@@ -74,10 +111,23 @@ public class Renderer extends Applet implements KeyListener, ActionListener  {
 	gameCube observedSpace = null;
 	String messageOfTheInstance = "In Development!! Please wait warmly while I get everything set up! :)";
 	ArrayList<String> messageOfTheInstanceA = new ArrayList<String>();
+	Color3f cyan = new Color3f(0.0f,1.0f,1.0f);
+	Color3f blue = new Color3f(0.0f, .0f, 1.0f);
+	Color3f red = new Color3f(1.0f,0.0f,0.0f);
+	Color3f green = new Color3f(0.0f,1.0f,0.0f);
+	Color3f yellow = new Color3f(1.0f,1.0f,0.0f);
 	BoundingSphere bounds = new BoundingSphere(new Point3d(0.0,0.0,0.0), 100.0);
 	Background back = new Background();
 	int standPhase = 0;
 	Thread drawLoop = null;
+	//The variable below is designed to mitigate usage of the setString method.
+	boolean unitIsChanged=false;
+	boolean testValue=false;
+	//The control vars below are used to simulate "accept" and "cancel",
+	//respectively.
+	boolean controlForward=false;
+	boolean controlBackward=false;
+	gameCube targetSpace = null;
 	public BranchGroup createSceneGraph() {
 		   // Create the root of the branch graph
 		   BranchGroup objRoot = new BranchGroup();
@@ -173,7 +223,7 @@ public class Renderer extends Applet implements KeyListener, ActionListener  {
 			   java.awt.image.BufferedImage whatIsThis = new java.awt.image.BufferedImage(256,128,java.awt.image.BufferedImage.TYPE_INT_ARGB);
 			   whatIsThis = null;
 			   try {
-				whatIsThis = ImageIO.read(new File("C:/Users/yoshi_000/Pictures/Vampire Girl (incomplete) (test).png"));
+				whatIsThis = ImageIO.read(new File("C:/Users/yoshi/Pictures/Vampire Girl (incomplete) (test).png"));
 			} catch (IOException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
@@ -195,6 +245,8 @@ public class Renderer extends Applet implements KeyListener, ActionListener  {
 			   sprite = pickedUnit.getSpriteHandler().getNativeRaster();
 			   sprite.setPosition(spritePoint);
 			   pickedUnit.setSpritePoint(spritePoint);
+			   Point3f destinationSpritePoint = new Point3f(spritePoint.x,spritePoint.y,spritePoint.z);
+			   pickedUnit.destinationSpritePoint=destinationSpritePoint;
 			   pickedUnit.getSpriteHandler().exportSpriteSectionToRaster(3, 0);
 			   /*sprite.setCapability(Raster.ALLOW_IMAGE_READ);
 			   sprite.setCapability(Raster.ALLOW_IMAGE_WRITE);
@@ -204,6 +256,7 @@ public class Renderer extends Applet implements KeyListener, ActionListener  {
 			   RenderingAttributes giveItAlpha = new RenderingAttributes(true,true,1.0f,RenderingAttributes.EQUAL);
 			   giveItAlpha.setCapability(RenderingAttributes.ALLOW_ALPHA_TEST_FUNCTION_READ);
 			   giveItAlpha.setCapability(RenderingAttributes.ALLOW_ALPHA_TEST_FUNCTION_WRITE);
+			   giveItAlpha.setCapability(RenderingAttributes.ALLOW_VISIBLE_WRITE);
 			   appear.setRenderingAttributes(giveItAlpha);
 			   /*The rotation point is related to the sprite point. A sprite
 			    * should always rotate about its center point.*/
@@ -309,6 +362,8 @@ public class Renderer extends Applet implements KeyListener, ActionListener  {
 		   menu3D7.setTranslation(new Vector3f(leftClipX,leftClipY-0.08f,-1f));
 		   menu3D8.setTranslation(new Vector3f(leftClipX,leftClipY-0.12f,-1f));
 		   menu3D9.setTranslation(new Vector3f(leftClipX,leftClipY-0.16f,-1f));
+		   menu3D10.setTranslation(new Vector3f(rightClip,topClip-0.16f,-1f));
+		   menu3D11.setTranslation(new Vector3f(rightClip,topClip-0.20f,-1f));
 		   menuTG1.setTransform(menu3D1);
 		   menuTG2.setTransform(menu3D2);
 		   menuTG3.setTransform(menu3D3);
@@ -318,14 +373,18 @@ public class Renderer extends Applet implements KeyListener, ActionListener  {
 		   menuTG7.setTransform(menu3D7);
 		   menuTG8.setTransform(menu3D8);
 		   menuTG9.setTransform(menu3D9);
+		   menuTG10.setTransform(menu3D10);
+		   menuTG11.setTransform(menu3D11);
 		   move = new Text2D("Move", menuWhite,"Arial",10,1);
 		   menuTG1.addChild(move);
 		   attack = new Text2D("Attack", menuWhite,"Arial",10,1);
 		   menuTG2.addChild(attack);
+		   ability = new Text2D("Ability",menuWhite,"Arial",10,1);
+		   menuTG3.addChild(ability);
 		   spell = new Text2D("Spell", menuWhite,"Arial",10,1);
-		   menuTG3.addChild(spell);
+		   menuTG4.addChild(spell);
 		   endTurn = new Text2D("End Turn", menuWhite,"Arial",10,1);
-		   menuTG4.addChild(endTurn);
+		   menuTG10.addChild(endTurn);
 		   nameLabel = new Text2D("                  ",menuWhite,"Arial",10,1);
 		   menuTG5.addChild(nameLabel);
 		   playerLabel = new Text2D("                  ",menuWhite,"Arial",10,1);
@@ -336,13 +395,32 @@ public class Renderer extends Applet implements KeyListener, ActionListener  {
 		   menuTG8.addChild(healthLabel);
 		   magicLabel = new Text2D("                  ",menuWhite,"Arial",10,1);
 		   menuTG9.addChild(magicLabel);
+		   ability1 = new Text2D("Ability 1",menuWhite,"Arial",10,1);
+		   menuTG1.addChild(ability1);
+		   ability2 = new Text2D("Ability 2",menuWhite,"Arial",10,1);
+		   menuTG2.addChild(ability2);
+		   ability3 = new Text2D("Ability 3",menuWhite,"Arial",10,1);
+		   menuTG3.addChild(ability3);
+		   ability4 = new Text2D("Ability 4",menuWhite,"Arial",10,1);
+		   menuTG4.addChild(ability4);
+		   ability5 = new Text2D("Ability 5",menuWhite,"Arial",10,1);
+		   menuTG10.addChild(ability5);
+		   ability6 = new Text2D("Ability 6",menuWhite,"Arial",10,1);
+		   menuTG11.addChild(ability6);
 		   nameLabel.getAppearance().setCapability(Appearance.ALLOW_TEXTURE_WRITE);
 		   playerLabel.getAppearance().setCapability(Appearance.ALLOW_TEXTURE_WRITE);
 		   levelLabel.getAppearance().setCapability(Appearance.ALLOW_TEXTURE_WRITE);
 		   healthLabel.getAppearance().setCapability(Appearance.ALLOW_TEXTURE_WRITE);
 		   magicLabel.getAppearance().setCapability(Appearance.ALLOW_TEXTURE_WRITE);
+		   ability1.getAppearance().setCapability(Appearance.ALLOW_TEXTURE_WRITE);
+		   ability2.getAppearance().setCapability(Appearance.ALLOW_TEXTURE_WRITE);
+		   ability3.getAppearance().setCapability(Appearance.ALLOW_TEXTURE_WRITE);
+		   ability4.getAppearance().setCapability(Appearance.ALLOW_TEXTURE_WRITE);
+		   ability5.getAppearance().setCapability(Appearance.ALLOW_TEXTURE_WRITE);
+		   ability6.getAppearance().setCapability(Appearance.ALLOW_TEXTURE_WRITE);
 		   move.getAppearance().setRenderingAttributes(new RenderingAttributes());
 		   attack.getAppearance().setRenderingAttributes(new RenderingAttributes());
+		   ability.getAppearance().setRenderingAttributes(new RenderingAttributes());
 		   spell.getAppearance().setRenderingAttributes(new RenderingAttributes());
 		   endTurn.getAppearance().setRenderingAttributes(new RenderingAttributes());
 		   nameLabel.getAppearance().setRenderingAttributes(new RenderingAttributes());
@@ -350,8 +428,15 @@ public class Renderer extends Applet implements KeyListener, ActionListener  {
 		   levelLabel.getAppearance().setRenderingAttributes(new RenderingAttributes());
 		   healthLabel.getAppearance().setRenderingAttributes(new RenderingAttributes());
 		   magicLabel.getAppearance().setRenderingAttributes(new RenderingAttributes());
+		   ability1.getAppearance().setRenderingAttributes(new RenderingAttributes());
+		   ability2.getAppearance().setRenderingAttributes(new RenderingAttributes());
+		   ability3.getAppearance().setRenderingAttributes(new RenderingAttributes());
+		   ability4.getAppearance().setRenderingAttributes(new RenderingAttributes());
+		   ability5.getAppearance().setRenderingAttributes(new RenderingAttributes());
+		   ability6.getAppearance().setRenderingAttributes(new RenderingAttributes());
 		   move.getAppearance().getRenderingAttributes().setCapability(RenderingAttributes.ALLOW_VISIBLE_WRITE);
 		   attack.getAppearance().getRenderingAttributes().setCapability(RenderingAttributes.ALLOW_VISIBLE_WRITE);
+		   ability.getAppearance().getRenderingAttributes().setCapability(RenderingAttributes.ALLOW_VISIBLE_WRITE);
 		   spell.getAppearance().getRenderingAttributes().setCapability(RenderingAttributes.ALLOW_VISIBLE_WRITE);
 		   endTurn.getAppearance().getRenderingAttributes().setCapability(RenderingAttributes.ALLOW_VISIBLE_WRITE);
 		   nameLabel.getAppearance().getRenderingAttributes().setCapability(RenderingAttributes.ALLOW_VISIBLE_WRITE);
@@ -359,6 +444,12 @@ public class Renderer extends Applet implements KeyListener, ActionListener  {
 		   levelLabel.getAppearance().getRenderingAttributes().setCapability(RenderingAttributes.ALLOW_VISIBLE_WRITE);
 		   healthLabel.getAppearance().getRenderingAttributes().setCapability(RenderingAttributes.ALLOW_VISIBLE_WRITE);
 		   magicLabel.getAppearance().getRenderingAttributes().setCapability(RenderingAttributes.ALLOW_VISIBLE_WRITE);
+		   ability1.getAppearance().getRenderingAttributes().setCapability(RenderingAttributes.ALLOW_VISIBLE_WRITE);
+		   ability2.getAppearance().getRenderingAttributes().setCapability(RenderingAttributes.ALLOW_VISIBLE_WRITE);
+		   ability3.getAppearance().getRenderingAttributes().setCapability(RenderingAttributes.ALLOW_VISIBLE_WRITE);
+		   ability4.getAppearance().getRenderingAttributes().setCapability(RenderingAttributes.ALLOW_VISIBLE_WRITE);
+		   ability5.getAppearance().getRenderingAttributes().setCapability(RenderingAttributes.ALLOW_VISIBLE_WRITE);
+		   ability6.getAppearance().getRenderingAttributes().setCapability(RenderingAttributes.ALLOW_VISIBLE_WRITE);
 		   menuPG.addChild(menuTG1);
 		   menuPG.addChild(menuTG2);
 		   menuPG.addChild(menuTG3);
@@ -368,9 +459,18 @@ public class Renderer extends Applet implements KeyListener, ActionListener  {
 		   menuPG.addChild(menuTG7);
 		   menuPG.addChild(menuTG8);
 		   menuPG.addChild(menuTG9);
-		   if (gameKernel.isBattleActive==false){
+		   menuPG.addChild(menuTG10);
+		   menuPG.addChild(menuTG11);
+		   ability1.getAppearance().getRenderingAttributes().setVisible(false);
+		   ability2.getAppearance().getRenderingAttributes().setVisible(false);
+		   ability3.getAppearance().getRenderingAttributes().setVisible(false);
+		   ability4.getAppearance().getRenderingAttributes().setVisible(false);
+		   ability5.getAppearance().getRenderingAttributes().setVisible(false);
+		   ability6.getAppearance().getRenderingAttributes().setVisible(false);
+		   if (gameKernel.isBattleActive==false||gameKernel.currentBattle.getUnitAtInitiativePosition(0).getControllingPlayer().playerController!=Player.HUMAN){
 			   move.getAppearance().getRenderingAttributes().setVisible(false);
 			   attack.getAppearance().getRenderingAttributes().setVisible(false);
+			   ability.getAppearance().getRenderingAttributes().setVisible(false);
 			   spell.getAppearance().getRenderingAttributes().setVisible(false);
 			   endTurn.getAppearance().getRenderingAttributes().setVisible(false);
 			   nameLabel.getAppearance().getRenderingAttributes().setVisible(false);
@@ -388,6 +488,45 @@ public class Renderer extends Applet implements KeyListener, ActionListener  {
 		   bottomLabelTG.setTransform(bottomLabelT3D);
 		   bottomLabelTG.addChild(bottomLabel);
 		   menuPG.addChild(bottomLabelTG);
+		   //Now it's time for the selection box.
+		   java.awt.image.BufferedImage brownBoxBI = null;
+		   try {
+			brownBoxBI = ImageIO.read(new File("C:/Users/yoshi/brownLabel.png"));
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		   ImageComponent2D brownBox = new ImageComponent2D(ImageComponent2D.FORMAT_RGBA,brownBoxBI);
+		   selectionBoxRaster = new Raster(selectionBoxRotationP,Raster.RASTER_COLOR,0,0,128,32,brownBox,null);
+		   selectionBoxRaster.setCapability(Raster.ALLOW_POSITION_WRITE);
+		   selectionBoxOS3=new OrientedShape3D(selectionBoxRaster,new Appearance(),OrientedShape3D.ROTATE_ABOUT_POINT,selectionBoxRotationP,false,0);
+		   selectionBoxOS3.setCapability(OrientedShape3D.ALLOW_POINT_WRITE);
+		   selectionBoxOS3.setCapability(OrientedShape3D.ALLOW_SCALE_WRITE);
+		   selectionBoxOS3.getAppearance().setRenderingAttributes(new RenderingAttributes());
+		   selectionBoxOS3.getAppearance().setCapability(Appearance.ALLOW_RENDERING_ATTRIBUTES_WRITE);
+		   selectionBoxOS3.getAppearance().getRenderingAttributes().setCapability(RenderingAttributes.ALLOW_VISIBLE_WRITE);
+		   menuPG.addChild(selectionBoxOS3);
+		   java.awt.image.BufferedImage portraitBI = null;
+		   try {
+			portraitBI = ImageIO.read(new File("C:/Users/yoshi/Google Drive/Monsters VS Monster Girls/Pictures/Portraits/Vampire Girl 2 bust1.png"));
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		   portraitImg = new ImageComponent2D(ImageComponent2D.FORMAT_RGBA,portraitBI);
+		   portraitImg.setCapability(ImageComponent2D.ALLOW_IMAGE_WRITE);
+		   portraitImg.set(portraitBI);
+		   portraitRaster = new Raster(portraitPoint,Raster.RASTER_COLOR,0,0,150,164,portraitImg,null);
+		   portraitRaster.setCapability(Raster.ALLOW_POSITION_WRITE);
+		   portraitRaster.setCapability(Raster.ALLOW_IMAGE_WRITE);
+		   portraitOS3=new OrientedShape3D(portraitRaster,new Appearance(),OrientedShape3D.ROTATE_ABOUT_POINT,portraitPoint,false,0);
+		   portraitOS3.setCapability(OrientedShape3D.ALLOW_POINT_WRITE);
+		   portraitOS3.setCapability(OrientedShape3D.ALLOW_SCALE_WRITE);
+		   portraitOS3.getAppearance().setRenderingAttributes(new RenderingAttributes());
+		   portraitOS3.getAppearance().setCapability(Appearance.ALLOW_RENDERING_ATTRIBUTES_WRITE);
+		   portraitOS3.getAppearance().getRenderingAttributes().setCapability(RenderingAttributes.ALLOW_VISIBLE_WRITE);
+		   portraitOS3.getAppearance().getRenderingAttributes().setAlphaTestFunction(RenderingAttributes.NOT_EQUAL);
+		   menuPG.addChild(portraitOS3);
 		   u.getViewingPlatform().setPlatformGeometry(menuPG);
 		   /*Graphics2D canvasGraphic = c.getGraphics2D();
 		   javax.media.j3d.J3DGraphics2D newGraphic;
@@ -411,7 +550,6 @@ public class Renderer extends Applet implements KeyListener, ActionListener  {
 		   c.getGraphics2D().flush(true);
 		   canvasGraphic.fill(hi);
 		   canvasGraphic.draw(hi);*/
-		   System.out.println(c.getDoubleBufferEnable());
 		   if (gameKernel.getCurrentScreen()==1){
 		   drawLoop = new Thread(drawingEngine);
 		   drawLoop.start();
@@ -456,12 +594,16 @@ public class Renderer extends Applet implements KeyListener, ActionListener  {
 		this.gameKernel=kernel;
 	}
 	
+	//Many key events are in the process of being phased out. Most inputs
+	//will be handed over to the Main thread for processing.
 	public void keyPressed(KeyEvent e) {
 		   //Invoked when a key has been pressed.
 		//The menu options will wrap around to the last or first options, respectively,
 		//upon exceeding the menu list size.
+		boolean changeTextDummy=false;
+		highlightYellowRevert();
 		if (e.getKeyCode()==KeyEvent.VK_DOWN){
-			if (gameKernel.isFreelookActive==false&&gameKernel.currentMenu!=null){
+			if (gameKernel.currentMenuIdent!="freeLook"&&gameKernel.currentMenuIdent!="moveTrace"&&gameKernel.currentMenu!=null){
 				gameKernel.currentMenuIndex++;
 				if (gameKernel.currentMenuIndex>gameKernel.currentMenu.size()-1){
 					gameKernel.currentMenuIndex=0;
@@ -470,14 +612,22 @@ public class Renderer extends Applet implements KeyListener, ActionListener  {
 			if (gameKernel.getCurrentMap().getCubeSouth(observedSpace)==null){
 				
 			}
+			else if (gameKernel.currentMenuIdent=="freeLook"||gameKernel.currentMenuIdent=="attackTarget"){
+				observedSpace=gameKernel.getCurrentMap().getCubeSouth(observedSpace);
+				targetSpace=observedSpace;
+			}
 			else{
-				if (gameKernel.isFreelookActive==true){
+				if ((gameKernel.currentMenuIdent=="moveTrace"&&gameKernel.highlightedSpacesTest(gameKernel.getCurrentMap().getCubeSouth(observedSpace), highlightedSpaces)==true&&gameKernel.duplicateSpacesTest(gameKernel.getCurrentMap().getCubeSouth(observedSpace))==false)){
 					observedSpace=gameKernel.getCurrentMap().getCubeSouth(observedSpace);
+					if ((gameKernel.currentMenuIdent=="moveTrace")){
+						gameKernel.addSpaceToPath(observedSpace, gameKernel.movementPath.get(gameKernel.movementPath.size()-1), gameKernel.getCurrentBattle().getCurrentUnitTurn().getMovementPointsLeft(), highlightedSpaces);
+						gameKernel.getCurrentBattle().getCurrentUnitTurn().setMovementPointsLeft(gameKernel.getCurrentBattle().getCurrentUnitTurn().getMovementPointsLeft()-1);
+					}
 				}
 				}
 		}
 		if (e.getKeyCode()==KeyEvent.VK_UP){
-			if (gameKernel.isFreelookActive==false&&gameKernel.currentMenu!=null){
+			if (gameKernel.currentMenuIdent!="freeLook"&&gameKernel.currentMenuIdent!="moveTrace"&&gameKernel.currentMenu!=null){
 				gameKernel.currentMenuIndex--;
 				if (gameKernel.currentMenuIndex<0){
 					gameKernel.currentMenuIndex=gameKernel.currentMenu.size()-1;
@@ -486,31 +636,141 @@ public class Renderer extends Applet implements KeyListener, ActionListener  {
 			if (gameKernel.getCurrentMap().getCubeNorth(observedSpace)==null){
 				
 			}
+			else if (gameKernel.currentMenuIdent=="freeLook"||gameKernel.currentMenuIdent=="attackTarget"){
+				observedSpace=gameKernel.getCurrentMap().getCubeNorth(observedSpace);
+				targetSpace=observedSpace;
+			}
 			else{
-				if (gameKernel.isFreelookActive==true){
+				if ((gameKernel.currentMenuIdent=="moveTrace"&&gameKernel.highlightedSpacesTest(gameKernel.getCurrentMap().getCubeNorth(observedSpace), highlightedSpaces)==true&&gameKernel.duplicateSpacesTest(gameKernel.getCurrentMap().getCubeNorth(observedSpace))==false)){
 					observedSpace=gameKernel.getCurrentMap().getCubeNorth(observedSpace);
+					if ((gameKernel.currentMenuIdent=="moveTrace")){
+						gameKernel.addSpaceToPath(observedSpace, gameKernel.movementPath.get(gameKernel.movementPath.size()-1), gameKernel.getCurrentBattle().getCurrentUnitTurn().getMovementPointsLeft(), highlightedSpaces);
+						gameKernel.getCurrentBattle().getCurrentUnitTurn().setMovementPointsLeft(gameKernel.getCurrentBattle().getCurrentUnitTurn().getMovementPointsLeft()-1);
+					}
 				}
 				}
 		}
 		if (e.getKeyCode()==KeyEvent.VK_LEFT){
+			if (gameKernel.currentMenuIdent=="spellMenu"||gameKernel.currentMenuIdent=="attackMenu"||gameKernel.currentMenuIdent=="abilityMenu"&&gameKernel.currentMenu!=null){
+				gameKernel.currentPage--;
+				if (gameKernel.currentPage<0){
+					gameKernel.currentMenuIndex=0;
+					gameKernel.currentPage=gameKernel.currentMenuSuper.size()-1;
+					//this.changeText1=false;
+					//this.changeText2=false;
+					changeTextDummy=true;
+				}
+			}
 			if (gameKernel.getCurrentMap().getCubeWest(observedSpace)==null){
 				
 			}
+			else if (gameKernel.currentMenuIdent=="freeLook"||gameKernel.currentMenuIdent=="attackTarget"){
+				observedSpace=gameKernel.getCurrentMap().getCubeWest(observedSpace);
+				targetSpace=observedSpace;
+			}
 			else{
-				if (gameKernel.isFreelookActive==true){
+				if ((gameKernel.currentMenuIdent=="moveTrace"&&gameKernel.highlightedSpacesTest(gameKernel.getCurrentMap().getCubeWest(observedSpace), highlightedSpaces)==true&&gameKernel.duplicateSpacesTest(gameKernel.getCurrentMap().getCubeWest(observedSpace))==false)){
 					observedSpace=gameKernel.getCurrentMap().getCubeWest(observedSpace);
+					if ((gameKernel.currentMenuIdent=="moveTrace")){
+						gameKernel.addSpaceToPath(observedSpace, gameKernel.movementPath.get(gameKernel.movementPath.size()-1), gameKernel.getCurrentBattle().getCurrentUnitTurn().getMovementPointsLeft(), highlightedSpaces);
+						gameKernel.getCurrentBattle().getCurrentUnitTurn().setMovementPointsLeft(gameKernel.getCurrentBattle().getCurrentUnitTurn().getMovementPointsLeft()-1);
+					}
 				}
 				}
 		}
 		if (e.getKeyCode()==KeyEvent.VK_RIGHT){
+			if (gameKernel.currentMenuIdent=="spellMenu"||gameKernel.currentMenuIdent=="attackMenu"||gameKernel.currentMenuIdent=="abilityMenu"&&gameKernel.currentMenu!=null){
+				gameKernel.currentPage++;
+				if (gameKernel.currentPage>gameKernel.currentMenuSuper.size()-1){
+					gameKernel.currentMenuIndex=0;
+					gameKernel.currentPage=0;
+					//this.changeText1=false;
+					//this.changeText2=false;
+					changeTextDummy=true;
+				}
+			}
 			if (gameKernel.getCurrentMap().getCubeEast(observedSpace)==null){
 				
 			}
-			else{
-				if (gameKernel.isFreelookActive==true){
-					observedSpace=gameKernel.getCurrentMap().getCubeEast(observedSpace);
-				}
+			else if (gameKernel.currentMenuIdent=="freeLook"||gameKernel.currentMenuIdent=="attackTarget"){
+				observedSpace=gameKernel.getCurrentMap().getCubeEast(observedSpace);
+				targetSpace=observedSpace;
 			}
+			else{
+				if ((gameKernel.currentMenuIdent=="moveTrace"&&gameKernel.highlightedSpacesTest(gameKernel.getCurrentMap().getCubeEast(observedSpace), highlightedSpaces)==true&&gameKernel.duplicateSpacesTest(gameKernel.getCurrentMap().getCubeEast(observedSpace))==false)){
+					observedSpace=gameKernel.getCurrentMap().getCubeEast(observedSpace);
+					if ((gameKernel.currentMenuIdent=="moveTrace")){
+						gameKernel.addSpaceToPath(observedSpace, gameKernel.movementPath.get(gameKernel.movementPath.size()-1), gameKernel.getCurrentBattle().getCurrentUnitTurn().getMovementPointsLeft(), highlightedSpaces);
+						gameKernel.getCurrentBattle().getCurrentUnitTurn().setMovementPointsLeft(gameKernel.getCurrentBattle().getCurrentUnitTurn().getMovementPointsLeft()-1);
+					}
+				}
+				}
+			//testValue=true;
+		}
+		updateSelectionBox();
+		highlightYellowFunction(highlightedYellow);
+		if ((gameKernel.currentMenuIdent=="abilityMenu"||gameKernel.currentMenuIdent=="spellMenu"||gameKernel.currentMenuIdent=="attackMenu")/*&&changeTextDummy==true*/){
+			if (gameKernel.currentMenuSuper.get(gameKernel.currentPage).size()>=1){
+				if (gameKernel.currentMenuIdent=="spellMenu")this.ability1.setString(currentSpellList.get(0+6*gameKernel.currentPage).name);
+				if (gameKernel.currentMenuIdent=="abilityMenu"||gameKernel.currentMenuIdent=="attackMenu")this.ability1.setString(currentAbilityList.get(0+6*gameKernel.currentPage).name);
+			}
+			if (gameKernel.currentMenuSuper.get(gameKernel.currentPage).size()>=2){
+				if (gameKernel.currentMenuIdent=="spellMenu")this.ability2.setString(currentSpellList.get(1+6*gameKernel.currentPage).name);
+				if (gameKernel.currentMenuIdent=="abilityMenu"||gameKernel.currentMenuIdent=="attackMenu")this.ability2.setString(currentAbilityList.get(1+6*gameKernel.currentPage).name);
+			}
+			if (gameKernel.currentMenuSuper.get(gameKernel.currentPage).size()>=3){
+				if (gameKernel.currentMenuIdent=="spellMenu")this.ability3.setString(currentSpellList.get(2+6*gameKernel.currentPage).name);
+				if (gameKernel.currentMenuIdent=="abilityMenu"||gameKernel.currentMenuIdent=="attackMenu")this.ability3.setString(currentAbilityList.get(2+6*gameKernel.currentPage).name);
+			}
+			if (gameKernel.currentMenuSuper.get(gameKernel.currentPage).size()>=4){
+				if (gameKernel.currentMenuIdent=="spellMenu")this.ability4.setString(currentSpellList.get(3+6*gameKernel.currentPage).name);
+				if (gameKernel.currentMenuIdent=="abilityMenu"||gameKernel.currentMenuIdent=="attackMenu")this.ability4.setString(currentAbilityList.get(3+6*gameKernel.currentPage).name);
+			}
+			if (gameKernel.currentMenuSuper.get(gameKernel.currentPage).size()>=5){
+				if (gameKernel.currentMenuIdent=="spellMenu")this.ability5.setString(currentSpellList.get(4+6*gameKernel.currentPage).name);
+				if (gameKernel.currentMenuIdent=="abilityMenu"||gameKernel.currentMenuIdent=="attackMenu")this.ability5.setString(currentAbilityList.get(4+6*gameKernel.currentPage).name);
+			}
+			if (gameKernel.currentMenuSuper.get(gameKernel.currentPage).size()>=6){
+				if (gameKernel.currentMenuIdent=="spellMenu")this.ability6.setString(currentSpellList.get(5+6*gameKernel.currentPage).name);
+				if (gameKernel.currentMenuIdent=="abilityMenu"||gameKernel.currentMenuIdent=="attackMenu")this.ability6.setString(currentAbilityList.get(5+6*gameKernel.currentPage).name);
+			}
+			this.ability1.getAppearance().getRenderingAttributes().setVisible(false);
+			this.ability2.getAppearance().getRenderingAttributes().setVisible(false);
+			this.ability3.getAppearance().getRenderingAttributes().setVisible(false);
+			this.ability4.getAppearance().getRenderingAttributes().setVisible(false);
+			this.ability5.getAppearance().getRenderingAttributes().setVisible(false);
+			this.ability6.getAppearance().getRenderingAttributes().setVisible(false);
+			if (gameKernel.currentMenuSuper.get(gameKernel.currentPage).size()>=1){
+				this.ability1.getAppearance().getRenderingAttributes().setVisible(true);
+				if (gameKernel.currentMenuSuper.get(gameKernel.currentPage).size()>=2){
+					this.ability2.getAppearance().getRenderingAttributes().setVisible(true);
+					if (gameKernel.currentMenuSuper.get(gameKernel.currentPage).size()>=3){
+						this.ability3.getAppearance().getRenderingAttributes().setVisible(true);
+						if (gameKernel.currentMenuSuper.get(gameKernel.currentPage).size()>=4){
+							this.ability4.getAppearance().getRenderingAttributes().setVisible(true);
+							if (gameKernel.currentMenuSuper.get(gameKernel.currentPage).size()>=5){
+								this.ability5.getAppearance().getRenderingAttributes().setVisible(true);
+								if (gameKernel.currentMenuSuper.get(gameKernel.currentPage).size()>=6){
+									this.ability6.getAppearance().getRenderingAttributes().setVisible(true);
+								} else {
+									//this.ability6.getAppearance().getRenderingAttributes().setVisible(false);
+								}
+							} else {
+								//this.ability5.getAppearance().getRenderingAttributes().setVisible(false);
+							}
+						} else {
+							//this.ability4.getAppearance().getRenderingAttributes().setVisible(false);
+						}
+					} else {
+						//this.ability3.getAppearance().getRenderingAttributes().setVisible(false);
+					}
+				} else {
+					//this.ability2.getAppearance().getRenderingAttributes().setVisible(false);
+				}
+			} else {
+				//this.ability1.getAppearance().getRenderingAttributes().setVisible(false);
+			}
+			//changeText2=true;
 		}
 		}
 	
@@ -519,160 +779,96 @@ public class Renderer extends Applet implements KeyListener, ActionListener  {
 		}
 		public void keyTyped(KeyEvent e){
 		   //Invoked when a key has been typed.
-			   /*if (e.getKeyChar()=='s') {xloc = xloc + .1f;}
-			   if (e.getKeyChar()=='a') {xloc = xloc - .1f;}*/
 			if (this.lookAt==null){
 				this.lookAt = new Transform3D();
 				this.lookingAngle = new Vector3d();
 				viewGroup.getTransform(lookAt);
 	            lookAt.get(lookingAngle);
 			}
-			if (e.getKeyChar()=='d'){
-				//lookingAngle.x+=0.05;
-				//Point1.x+=0.05;
-				   /*if (!timer.isRunning()){
-						timer.start();
-				    }
-				   else {
-					   //System.out.println(gameKernel.getCurrentScreen());
-				   }*/
-				//Hydra Girl: "East? I thought you said Weest..."
+			//Obsolete code
+			/*if (e.getKeyChar()=='d'){
+				Hydra Girl: "East? I thought you said Weest..."
 				if (gameKernel.getCurrentMap().getCubeEast(observedSpace)==null){
 					
 				}
 				else{
-					if (gameKernel.isFreelookActive==true){
+					if (gameKernel.currentMenuIdent=="freeLook"||gameKernel.currentMenuIdent=="moveTrace"){
 						observedSpace=gameKernel.getCurrentMap().getCubeEast(observedSpace);
 					}
 				}
 			}
 			if (e.getKeyChar()=='a'){
-				//lookingAngle.x-=0.05;
-				//Point1.x-=0.05;
 				if (gameKernel.getCurrentMap().getCubeWest(observedSpace)==null){
 					
 				}
 				else{
-					if (gameKernel.isFreelookActive==true){
+					if (gameKernel.currentMenuIdent=="freeLook"||gameKernel.currentMenuIdent=="moveTrace"){
 						observedSpace=gameKernel.getCurrentMap().getCubeWest(observedSpace);
 					}
 					}
 				
 			}
 			if (e.getKeyChar()=='s'){
-				//lookingAngle.y-=0.05;
-				//Point1.y-=0.05;
 				if (gameKernel.getCurrentMap().getCubeSouth(observedSpace)==null){
 					
 				}
 				else{
-					if (gameKernel.isFreelookActive==true){
+					if (gameKernel.currentMenuIdent=="freeLook"||gameKernel.currentMenuIdent=="moveTrace"){
 						observedSpace=gameKernel.getCurrentMap().getCubeSouth(observedSpace);
 					}
 					}
 			}
 			if (e.getKeyChar()=='w'){
-				//lookingAngle.y+=0.05;
-				//Point1.y+=0.05;
 				if (gameKernel.getCurrentMap().getCubeNorth(observedSpace)==null){
 					
 				}
 				else{
-					if (gameKernel.isFreelookActive==true){
+					if (gameKernel.currentMenuIdent=="freeLook"||gameKernel.currentMenuIdent=="moveTrace"){
 						observedSpace=gameKernel.getCurrentMap().getCubeNorth(observedSpace);
 					}
 					}
-			}
-			if (e.getKeyChar()=='q'){
-				//if (gameKernel.getCurrentMap().getCubeNorth(gameKernel.getCurrentMap().getEntitiesOnMap().get(0).getCurrentCube())==null){
-					
-				//}
-				//else{
-					//gameKernel.getCurrentMap().placeEntityAtCube(gameKernel.getCurrentMap().getEntitiesOnMap().get(0), gameKernel.getCurrentMap().getCubeNorth(gameKernel.getCurrentMap().getEntitiesOnMap().get(0).getCurrentCube()));
-				//}
-				//lookingAngle.z+=0.05;
-				//Point1.z+=0.05;
-			}
-			if (e.getKeyChar()=='e'){
-				//lookingAngle.z-=0.05;
-				//Point1.z-=0.05;
-			}
-			if (e.getKeyChar()=='h'){
-				//lookingAngle.x+=0.05;
-				//Point2.x+=0.05;
-				   /*if (!timer.isRunning()){
-						timer.start();
-				    }
-				   else {
-					   //System.out.println(gameKernel.getCurrentScreen());
-				   }*/
-				//menu3D1Vec.x+=0.05;
-				//menu3D1.set(menu3D1Vec);
-				//menuTG1.setTransform(menu3D1);
-			}
-			if (e.getKeyChar()=='f'){
-				//lookingAngle.x-=0.05;
-				//Point2.x-=0.05;
-				//menu3D1Vec.x-=0.05;
-			}
-			if (e.getKeyChar()=='g'){
-				//lookingAngle.y-=0.05;
-				//Point2.y-=0.05;
-				//menu3D1Vec.y-=0.05;
-			}
-			if (e.getKeyChar()=='t'){
-				//lookingAngle.y+=0.05;
-				//Point2.y+=0.05;
-				//menu3D1Vec.y+=0.05;
-			}
-			if (e.getKeyChar()=='r'){
-				//lookingAngle.z+=0.05;
-				//Point2.z+=0.05;
-				//menu3D1Vec.z-=0.05;
-			}
-			if (e.getKeyChar()=='y'){
-				//lookingAngle.z-=0.05;
-				//Point2.z-=0.05;
-				//menu3D1Vec.z+=0.05;
-			}
-			if (e.getKeyChar()=='l'){
-				//lookingAngle.x+=0.05;
-				//lookingAngle.x+=0.05;
-				   /*if (!timer.isRunning()){
-						timer.start();
-				    }
-				   else {
-					   //System.out.println(gameKernel.getCurrentScreen());
-				   }*/
-			}
-			if (e.getKeyChar()=='j'){
-				//lookingAngle.x-=0.05;
-				//lookingAngle.x-=0.05;
-			}
-			if (e.getKeyChar()=='k'){
-				//lookingAngle.y-=0.05;
-				//lookingAngle.y-=0.05;
-			}
-			if (e.getKeyChar()=='i'){
-				//lookingAngle.y+=0.05;
-				//lookingAngle.y+=0.05;
-			}
-			if (e.getKeyChar()=='u'){
-				//lookingAngle.z+=0.05;
-				//lookingAngle.z+=0.05;
-			}
-			if (e.getKeyChar()=='o'){
-				//lookingAngle.z-=0.05;
-				//lookingAngle.z-=0.05;
-			}
+			}*/
 			//In most cases, the Z key confirms the selected option.
 			if (e.getKeyChar()=='z'){ 
-				if (gameKernel.isFreelookActive==false&&gameKernel.currentMenu!=null){
+				controlForward=true;
+				if (gameKernel.currentMenuIdent=="battleOptions"&&gameKernel.currentMenu!=null){
 					//These will each do something eventually.
-				System.out.println(gameKernel.currentMenuIndex);
 					//Move
 					if (gameKernel.currentMenuIndex==0){
-						
+						gameKernel.currentMenuIdent="moveTrace";
+						gameKernel.isMovingActive=true;
+						//Obsolete code
+						/*highlightedSpaces=gameKernel.getSpacesInMovementRange(gameKernel.getCurrentBattle().getCurrentUnitTurn().getCurrentCube(),gameKernel.getCurrentBattle().getCurrentUnitTurn().getMovementPointsLeft());
+						for(int i=0;i<highlightedSpaces.size();i++){
+							highlightedSpaces.get(i).isHighlighted=true;
+						}
+						highlightedSpaces = gameKernel.currentMap.getCubeList();
+						for(int i = 0; i<highlightedSpaces.size();i++){
+							for (int r=0;r<10;r++){
+							highlightedSpaces.get(i).getAssociatedSphereOfHelp().getAppearance().getMaterial().setAmbientColor(cyan);
+							highlightedSpaces.get(i).getAssociatedSphereOfHelp().getAppearance().getMaterial().setDiffuseColor(cyan);
+							highlightedSpaces.get(i).associatedBox.getAppearance().getMaterial().setAmbientColor(cyan);
+							highlightedSpaces.get(i).associatedBox.getAppearance().getMaterial().setDiffuseColor(cyan);
+							}
+							highlightedSpaces.get(i).cubeColor="cyan";
+						}
+						for (int i = 0;i<highlightedSpaces.size();i++){
+							for (int r=0;r<30;r++){
+								if (highlightedSpaces.get(i).isHighlighted==false){
+									highlightedSpaces.get(i).getAssociatedSphereOfHelp().getAppearance().getMaterial().setAmbientColor(blue);
+									highlightedSpaces.get(i).getAssociatedSphereOfHelp().getAppearance().getMaterial().setDiffuseColor(blue);
+									highlightedSpaces.get(i).associatedBox.getAppearance().getMaterial().setAmbientColor(blue);
+									highlightedSpaces.get(i).associatedBox.getAppearance().getMaterial().setDiffuseColor(blue);
+								}
+							}
+							if(highlightedSpaces.get(i).isHighlighted==false){
+								highlightedSpaces.get(i).cubeColor="blue";
+							}
+						}
+						highlightedSpaces=gameKernel.getSpacesInMovementRange(gameKernel.getCurrentBattle().getCurrentUnitTurn().getCurrentCube(),gameKernel.getCurrentBattle().getCurrentUnitTurn().getMovementPointsLeft());
+						targetSpace = gameKernel.currentBattle.getCurrentUnitTurn().hostCube;
+						gameKernel.movementPath.add(gameKernel.getCurrentBattle().getCurrentUnitTurn().getCurrentCube());
+						gameKernel.movementPathDirection.add(gameKernel.getCurrentBattle().getCurrentUnitTurn().facing);*/
 					}
 					//Attack
 					else if (gameKernel.currentMenuIndex==1){
@@ -685,26 +881,40 @@ public class Renderer extends Applet implements KeyListener, ActionListener  {
 					//End Turn
 					else if (gameKernel.currentMenuIndex==3){
 						if (gameKernel.isBattleActive()==true){
-							gameKernel.getCurrentBattle().nextTurn();
+							//gameKernel.getCurrentBattle().nextTurn();
+							//unitIsChanged=false;
 						}
 					}
 			}
 				}
 			//In most cases, the X key cancels to the previous menu, if any.
 			if(e.getKeyChar()=='x'){ 
-				
+				controlBackward=true;
+				gameKernel.isMovingActive=false;
+				gameKernel.isFreelookActive=false;
+				//Obsolete code
+				/*if (highlightedSpaces!=null){
+				for(int i = 0; i<highlightedSpaces.size();i++){
+					highlightedSpaces.get(i).isHighlighted=false;
+				}
+				}*/
 			}
 			if (e.getKeyChar()=='4'){
-				if (gameKernel.isBattleActive()==true&&gameKernel.isFreelookActive==false){
+				if (gameKernel.isBattleActive()==true&&gameKernel.currentMenuIdent=="battleOptions"){
 					gameKernel.getCurrentBattle().nextTurn();
+					unitIsChanged=false;
 				}
 			}
 			if (e.getKeyChar()=='5'){
-				if (gameKernel.isFreelookActive==true){
+				if (gameKernel.currentMenuIdent=="freeLook"){
 					gameKernel.isFreelookActive=false;
+					gameKernel.currentMenuIdent="battleOptions";
 				}
 				else{
+					if (gameKernel.currentMenuIdent=="battleOptions"){
 					gameKernel.isFreelookActive=true;
+					gameKernel.currentMenuIdent="freeLook";
+					}
 				}
 			}
 			//lookAt.set(lookingAngle);
@@ -723,23 +933,127 @@ public class Renderer extends Applet implements KeyListener, ActionListener  {
 			//viewGroup.getTransform(exampleTransform);
 		}
 		public void actionPerformed(ActionEvent e ) {
-			   // start timer when button is pressed
-			   /*if (e.getSource()==go){
-			      if (!timer.isRunning()) {
-			         timer.start();
-			      }
-			   }
-			   else {
-			       //height += .1 * sign;
-			      //if (Math.abs(height *2) >= 1 ) sign = -1.0f * sign;
-			      //if (height<-0.4f) {
-			      //trans.setScale(new Vector3d(1.0, .8, 1.0));
-			   }
-			   else {
-			      //trans.setScale(new Vector3d(1.0, 1.0, 1.0));
-			   }
-			   //trans.setTranslation(new Vector3f(xloc,height,0.0f));
-			   //objTrans.setTransform(trans);
-			   }*/
+
 			}
+		public void updateSelectionBox(){
+			if (gameKernel.currentMenuIdent!="freeLook"&&gameKernel.currentMenuIdent!="moveTrace"&&gameKernel.currentMenuIdent!="attackTarget"&&gameKernel.currentMenu!=null&&gameKernel.isBattleActive==true){
+				if (gameKernel.currentMenuIndex==0){
+					this.selectionBoxRotationP.y=selectionBoxYAnchor;
+					this.selectionBoxOS3.setRotationPoint(selectionBoxRotationP);
+					this.selectionBoxRaster.setPosition(selectionBoxRotationP);
+				}
+				else if (gameKernel.currentMenuIndex==1){
+					this.selectionBoxRotationP.y=selectionBoxYAnchor-0.04f;
+					this.selectionBoxOS3.setRotationPoint(selectionBoxRotationP);
+					this.selectionBoxRaster.setPosition(selectionBoxRotationP);
+				}
+				else if (gameKernel.currentMenuIndex==2){
+					this.selectionBoxRotationP.y=selectionBoxYAnchor-0.08f;
+					this.selectionBoxOS3.setRotationPoint(selectionBoxRotationP);
+					this.selectionBoxRaster.setPosition(selectionBoxRotationP);
+				}
+				else if (gameKernel.currentMenuIndex==3){
+					this.selectionBoxRotationP.y=selectionBoxYAnchor-0.12f;
+					this.selectionBoxOS3.setRotationPoint(selectionBoxRotationP);
+					this.selectionBoxRaster.setPosition(selectionBoxRotationP);
+				}
+				else if (gameKernel.currentMenuIndex==4){
+					this.selectionBoxRotationP.y=selectionBoxYAnchor-0.16f;
+					this.selectionBoxOS3.setRotationPoint(selectionBoxRotationP);
+					this.selectionBoxRaster.setPosition(selectionBoxRotationP);
+				}
+				else if (gameKernel.currentMenuIndex==5){
+					this.selectionBoxRotationP.y=selectionBoxYAnchor-0.20f;
+					this.selectionBoxOS3.setRotationPoint(selectionBoxRotationP);
+					this.selectionBoxRaster.setPosition(selectionBoxRotationP);
+				}
+			}
+		}
+		void highlightSpacesFunction(Color3f color, String colorString){
+			for(int i=0;i<this.highlightedSpaces.size();i++){
+				this.highlightedSpaces.get(i).isHighlighted=true;
+				this.highlightedSpaces.get(i).cubeColor=colorString;
+			}
+			this.highlightedSpaces = gameKernel.currentMap.getCubeList();
+			for(int i = 0; i<this.highlightedSpaces.size();i++){
+				for (int r=0;r<10;r++){
+				this.highlightedSpaces.get(i).getAssociatedSphereOfHelp().getAppearance().getMaterial().setAmbientColor(color);
+				this.highlightedSpaces.get(i).getAssociatedSphereOfHelp().getAppearance().getMaterial().setDiffuseColor(color);
+				this.highlightedSpaces.get(i).associatedBox.getAppearance().getMaterial().setAmbientColor(color);
+				this.highlightedSpaces.get(i).associatedBox.getAppearance().getMaterial().setDiffuseColor(color);
+				}
+				this.highlightedSpaces.get(i).cubeColor=colorString;
+			}
+			for (int i = 0;i<this.highlightedSpaces.size();i++){
+				for (int r=0;r<30;r++){
+					if (this.highlightedSpaces.get(i).isHighlighted==false){
+						this.highlightedSpaces.get(i).getAssociatedSphereOfHelp().getAppearance().getMaterial().setAmbientColor(this.blue);
+						this.highlightedSpaces.get(i).getAssociatedSphereOfHelp().getAppearance().getMaterial().setDiffuseColor(this.blue);
+						this.highlightedSpaces.get(i).associatedBox.getAppearance().getMaterial().setAmbientColor(this.blue);
+						this.highlightedSpaces.get(i).associatedBox.getAppearance().getMaterial().setDiffuseColor(this.blue);
+					}
+				}
+				if(this.highlightedSpaces.get(i).isHighlighted==false){
+					this.highlightedSpaces.get(i).cubeColor="blue";
+				}
+			}
+		}
+		void highlightYellowRevert(){
+			if (highlightedYellow!=null){
+				for (int i=0;i<highlightedYellow.size();i++){
+					//Revert changes from the previous batch of highlightedYellow cubes.
+					if (highlightedYellow.get(i).isHighlighted==false){
+						highlightedYellow.get(i).cubeColor="blue";
+						highlightedYellow.get(i).getAssociatedSphereOfHelp().getAppearance().getMaterial().setAmbientColor(this.blue);
+						highlightedYellow.get(i).getAssociatedSphereOfHelp().getAppearance().getMaterial().setDiffuseColor(this.blue);
+						highlightedYellow.get(i).associatedBox.getAppearance().getMaterial().setAmbientColor(this.blue);
+						highlightedYellow.get(i).associatedBox.getAppearance().getMaterial().setDiffuseColor(this.blue);
+					}
+					else if (highlightedYellow.get(i).isHighlighted==true){
+						if (highlightedYellow.get(i).cubeColor=="yellow"){
+							highlightedYellow.get(i).getAssociatedSphereOfHelp().getAppearance().getMaterial().setAmbientColor(this.yellow);
+							highlightedYellow.get(i).getAssociatedSphereOfHelp().getAppearance().getMaterial().setDiffuseColor(this.yellow);
+							highlightedYellow.get(i).associatedBox.getAppearance().getMaterial().setAmbientColor(this.yellow);
+							highlightedYellow.get(i).associatedBox.getAppearance().getMaterial().setDiffuseColor(this.yellow);
+						}
+						if (highlightedYellow.get(i).cubeColor=="red"){
+							highlightedYellow.get(i).getAssociatedSphereOfHelp().getAppearance().getMaterial().setAmbientColor(this.red);
+							highlightedYellow.get(i).getAssociatedSphereOfHelp().getAppearance().getMaterial().setDiffuseColor(this.red);
+							highlightedYellow.get(i).associatedBox.getAppearance().getMaterial().setAmbientColor(this.red);
+							highlightedYellow.get(i).associatedBox.getAppearance().getMaterial().setDiffuseColor(this.red);
+						}
+						if (highlightedYellow.get(i).cubeColor=="cyan"){
+							highlightedYellow.get(i).getAssociatedSphereOfHelp().getAppearance().getMaterial().setAmbientColor(this.cyan);
+							highlightedYellow.get(i).getAssociatedSphereOfHelp().getAppearance().getMaterial().setDiffuseColor(this.cyan);
+							highlightedYellow.get(i).associatedBox.getAppearance().getMaterial().setAmbientColor(this.cyan);
+							highlightedYellow.get(i).associatedBox.getAppearance().getMaterial().setDiffuseColor(this.cyan);
+						}
+						if (highlightedYellow.get(i).cubeColor=="green"){
+							highlightedYellow.get(i).getAssociatedSphereOfHelp().getAppearance().getMaterial().setAmbientColor(this.green);
+							highlightedYellow.get(i).getAssociatedSphereOfHelp().getAppearance().getMaterial().setDiffuseColor(this.green);
+							highlightedYellow.get(i).associatedBox.getAppearance().getMaterial().setAmbientColor(this.green);
+							highlightedYellow.get(i).associatedBox.getAppearance().getMaterial().setDiffuseColor(this.green);
+						}
+					}
+				}
+			}
+		}
+		void highlightYellowFunction(ArrayList<gameCube> newHighlightedYellow){
+			if (highlightedYellow==null){
+				highlightedYellow=gameKernel.rangeArea(observedSpace, 0, 0, -1, true, false);
+			}
+			//Select a new batch of highlightedYellow and highlight its cubes yellow.
+			if (highlightedYellow!=null&&(gameKernel.currentMenuIdent=="freeLook"||gameKernel.currentMenuIdent=="attackTarget"||gameKernel.currentMenuIdent=="moveTrace"||gameKernel.currentBattle.getCurrentUnitTurn().getControllingPlayer().playerController==Player.AI)){
+				highlightedYellow=gameKernel.rangeArea(observedSpace, maxRange, minRange, -1, true, false);
+				if (newHighlightedYellow!=null&&newHighlightedYellow!=highlightedYellow){
+					//highlightedYellow=newHighlightedYellow;
+				}
+				for (int i=0;i<highlightedYellow.size();i++){
+					highlightedYellow.get(i).getAssociatedSphereOfHelp().getAppearance().getMaterial().setAmbientColor(this.yellow);
+					highlightedYellow.get(i).getAssociatedSphereOfHelp().getAppearance().getMaterial().setDiffuseColor(this.yellow);
+					highlightedYellow.get(i).associatedBox.getAppearance().getMaterial().setAmbientColor(this.yellow);
+					highlightedYellow.get(i).associatedBox.getAppearance().getMaterial().setDiffuseColor(this.yellow);
+				}
+			}
+		}
 }
