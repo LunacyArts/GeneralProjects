@@ -28,11 +28,3 @@ Tiles types
 18 - ocean
 19 - beach
 20 - ice cap
-=======
-0 - plains
-1 - forest
-2 - mountian
-3 - River
-4 - Lake
-5 - Pond
->>>>>>> origin/master
