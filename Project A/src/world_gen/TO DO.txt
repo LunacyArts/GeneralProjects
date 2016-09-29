@@ -1,0 +1,9 @@
+------------   TO DO   -----------
+
+-----------Map Generation---------
+
+[ ]Generate Peaks and Pits
+[X]Spawn Neighbors
+[ ]Spawn Foliage
+[X]Grow Foliage
+[ ]Spawn Resources

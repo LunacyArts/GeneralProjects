@@ -1,0 +1,86 @@
+class Map{
+	public Map(){
+		
+	}
+	public void positive_duplicator(height, this_tile){
+		//Don't want to lower height of higher neighbors, will result in a lowering of all peaks
+		if(this_tile.getHeight() < 0 || this_tile.getHeight() > height){
+			return;
+		}
+		else{
+			Random rand = new Random();
+			int i = rand.netInt(2)
+			//height of neighbor has a 1/3 chance of staying the same
+			if(i == 0 || i == 1){
+				this_tile.setHeight(height - 1);
+				this_tile.getNeighbors() = new tiles[] neighbors;
+				for(tile neighbor : neighbors){
+					positive_duplicator(this_tile.getHeight(); neighbor)
+				}
+				return;
+			}
+			if(i == 2){
+				this_tile.setHeight(height);
+				this_tile.getNeighbors() = new tiles[] neighbors;
+				for(tile neighbor : neighbors){
+					positive_duplicator(this_tile.getHeight(); neighbor)
+				}
+				return;
+			}
+		}
+	}
+	public void negative_duplicator(height, this_tile){
+		//Don't want to increase height of lower neighbors, will result in a filling of all bodies of water
+		if(this_tile.getHeight() > 0 || this_tile.getHeight() < height){
+			return;
+		}
+		else{
+			Random rand = new Random();
+			int i = rand.netInt(2)
+			//height of neighbor has a 1/3 chance of staying the same
+			if(i == 0 || i == 1){
+				this_tile.setHeight(height + 1);
+				this_tile.getNeighbors() = new tiles[] neighbors;
+				for(tile neighbor : neighbors){
+					negative_duplicator(this_tile.getHeight(); neighbor)
+				}
+				return;
+			}
+			if(i == 2){
+				this_tile.setHeight(height);
+				this_tile.getNeighbors() = new tiles[] neighbors;
+				for(tile neighbor : neighbors){
+					negative_duplicator(this_tile.getHeight(); neighbor)
+				}
+				return;
+			}
+		}
+	}
+	public void foliage_duplicator(density, this_tile){
+		//Don't want to increase density of higher neighbors, will result in a removal of foliage
+		if(this_tile.getHeight() != 0 || this_tile.getFoliageDensity() > 0){
+			return;
+		}
+		else{
+			Random rand = new Random();
+			int i = rand.netInt(2)
+			//density of neighbor has a 1/3 chance of staying the same
+			if(i == 0 || i == 1){
+				this_tile.setFoliageDensity(density - 1);
+				this_tile.getNeighbors() = new tiles[] neighbors;
+				for(tile neighbor : neighbors){
+					foliage_duplicator(this_tile.getFoliageDensity(); neighbor)
+				}
+				return;
+			}
+			if(i == 2){
+				this_tile.setFoliageDensity(density);
+				this_tile.getNeighbors() = new tiles[] neighbors;
+				for(tile neighbor : neighbors){
+					foliage_duplicator(this_tile.getFoliageDensity(); neighbor)
+				}
+				return;
+			}
+		}
+	}
+}	

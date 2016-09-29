@@ -1,0 +1,13 @@
+Class Tile{
+	int X;
+	int Y;
+	int Z;
+	Type type;
+	Resource resource = null;
+	public void Tile(int x; int y; int z, Type type){
+		X = x;
+		Y = y;
+		Z = z;
+	}
+	protected void generate_resources
+}

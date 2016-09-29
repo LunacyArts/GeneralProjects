@@ -1,0 +1,7 @@
+class Rescource{
+	Type parent_tile_type
+	
+	public Rescource(Type type){
+		if()
+	}
+}
