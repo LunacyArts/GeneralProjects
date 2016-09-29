@@ -6,4 +6,24 @@ Generates a 2D array of ints 0-X
 Tiles types
 -----------------------------------------------------------
 0 - plains, open land
-1 - 
+1 - forest
+2 - mountain
+3 - river
+4 - lake
+5 - pond
+6 - forested hills
+7 - open hills
+7 - desert
+8 - valley
+9 - canyon
+10 - badlands
+11 - lava land
+12 - lava lake
+13 - lava ocean
+14 - swamp
+15 - marsh
+16 - jungle
+17 - jungle hills
+18 - ocean
+19 - beach
+20 - ice cap
