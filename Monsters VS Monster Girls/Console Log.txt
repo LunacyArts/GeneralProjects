@@ -1,0 +1,14 @@
+Gervill
+Microsoft MIDI Mapper
+CoolSoft MIDIMapper
+Microsoft GS Wavetable Synth
+VirtualMIDISynth #1
+Real Time Sequencer
+Selected MIDI device: VirtualMIDISynth #1
+Hello world!
+AI are thinking...
+Color test complete.
+Chosen movement path: [mvmg.gameCube@f3afd9, mvmg.gameCube@3b36e0, mvmg.gameCube@ebcd03, mvmg.gameCube@14abbdc, mvmg.gameCube@5c4b, mvmg.gameCube@167f35d, mvmg.gameCube@1fead27], directions:[0, 3, 3, 3, 3, 2, 1]
+Weight of top three decisions: 300.0,300.0,300.0
+It is now Vampire Girl's Evil Twin's turn.
+Move

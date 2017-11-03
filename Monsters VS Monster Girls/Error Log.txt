@@ -1,0 +1,24 @@
+Nov 01, 2017 3:21:26 PM mvmg.MVMG printStackTrace
+WARNING: javax.sound.midi.MidiUnavailableException: The specified device is already in use.  Wait until it is free, and then try again.
+javax.sound.midi.MidiUnavailableException: The specified device is already in use.  Wait until it is free, and then try again.
+	at com.sun.media.sound.MidiOutDevice.nOpen(Native Method)
+	at com.sun.media.sound.MidiOutDevice.implOpen(Unknown Source)
+	at com.sun.media.sound.AbstractMidiDevice.doOpen(Unknown Source)
+	at com.sun.media.sound.AbstractMidiDevice.open(Unknown Source)
+	at mvmg.soundPlayer.<init>(soundPlayer.java:31)
+	at mvmg.UI.<init>(UI.java:35)
+	at mvmg.Renderer.<init>(Renderer.java:342)
+	at mvmg.MVMG.main(MVMG.java:634)
+
+Nov 01, 2017 3:24:48 PM mvmg.MVMG printStackTrace
+WARNING: javax.sound.midi.MidiUnavailableException: The specified device is already in use.  Wait until it is free, and then try again.
+javax.sound.midi.MidiUnavailableException: The specified device is already in use.  Wait until it is free, and then try again.
+	at com.sun.media.sound.MidiOutDevice.nOpen(Native Method)
+	at com.sun.media.sound.MidiOutDevice.implOpen(Unknown Source)
+	at com.sun.media.sound.AbstractMidiDevice.doOpen(Unknown Source)
+	at com.sun.media.sound.AbstractMidiDevice.open(Unknown Source)
+	at mvmg.soundPlayer.<init>(soundPlayer.java:31)
+	at mvmg.UI.<init>(UI.java:35)
+	at mvmg.Renderer.<init>(Renderer.java:342)
+	at mvmg.MVMG.main(MVMG.java:634)
+
